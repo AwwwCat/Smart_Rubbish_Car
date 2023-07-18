@@ -9,12 +9,34 @@
 ![](https://mmbiz.qpic.cn/mmbiz_jpg/t4HGUiau80iagyzwKKXkiaylc8v6hT6rSf2l2RxBoqZvzib2YrcVaKNVjLHEW8njXTozM2UhTI33yoKmjr8BTiaPTEA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1 "赤菟开发板") 
 * FPGA————Logos系列 PGL22G  
 ![](http://t15.baidu.com/it/u=1667932565,3317867372&fm=224&app=112&f=JPEG?w=500&h=500 "紫光同创 Logos系列 PGL22G")  
-* [OpenMV Cam H7 Plus摄像头](https://singtown.com/product/50812/openmv4-h7-plus/ "OpenMV Cam H7 Plus官方介绍")
-![](https://book.openmv.cc/assets/002.jpg "OpenMV Cam H7 Plus摄像头")
+* [OpenMV Cam H7 Plus摄像头](https://singtown.com/product/50812/openmv4-h7-plus/ "OpenMV Cam H7 Plus官方介绍")  
+![](https://book.openmv.cc/assets/002.jpg "OpenMV Cam H7 Plus摄像头")  
 * L298N电机驱动板模块TB6612FNG  
 * HC-SR04 US-100 US-015超声波模块  
 * DC-DC转换板  
 * 舵机，马达，轮子  
 
-## 软件环境
-###
+## 项目说明
+### 软件环境
+* MounRiver Studio
+* Pango Design Suite
+* OpenMV IDE
+### 使用方法
+将`Smart_Car_ch32v`用 **MounRiver Studio** 打开，编译烧录至 **赤菟开发板**；将`Smart_Car_fpga`用 **Pango Design Suite** 打开，编译烧录至 **PGL22G**。
+
+## 代码说明
+### Smart_Car_ch32v  
+> Smart_Car_ch32v  
+>> User  
+>>> car.c  
+>>> lcd.c  
+>>> arm.c  
+>>> main.c  
+  
+### Smart_Car_fpga  
+> Smart_Car_fpga
+>> prj  
+>> rtl  
+>>> smart_car.v  
+
+
