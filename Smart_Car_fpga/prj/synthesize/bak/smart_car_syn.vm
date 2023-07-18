@@ -1,0 +1,6771 @@
+//
+// Generated (version 2020.2-Lite<build 59895>) at Mon Jul 17 18:52:16 2023
+//
+
+module smart_car
+(
+    input a,
+    input b,
+    input echo_a,
+    input echo_b,
+    input echo_en_n,
+    input en_ab,
+    input p1,
+    input p2,
+    input p3,
+    input sys_clk,
+    input sys_rst_n,
+    output l1,
+    output l2,
+    output l3,
+    output l4,
+    output nr_a,
+    output nr_a_led,
+    output nr_b,
+    output nr_b_led,
+    output pwm1,
+    output pwm2,
+    output pwm3,
+    output pwm4,
+    output pwm_ab,
+    output rgb_p,
+    output trig
+);
+    wire N0;
+    wire [5:0] N5;
+    wire N18;
+    wire [23:0] N20;
+    wire N32;
+    wire N87_inv;
+    wire N112;
+    wire [19:0] N119;
+    wire N133;
+    wire [20:0] N172;
+    wire [20:0] N193;
+    wire N223_0;
+    wire [20:0] N243;
+    wire N283;
+    wire N284;
+    wire N285;
+    wire N288;
+    wire N289;
+    wire N290;
+    wire N300;
+    wire N342_inv;
+    wire N357;
+    wire N361;
+    wire N367;
+    wire N372;
+    wire N373;
+    wire N381;
+    wire N388;
+    wire N395;
+    wire N402;
+    wire N405;
+    wire N408;
+    wire _N1;
+    wire _N7;
+    wire _N10;
+    wire _N11;
+    wire _N22;
+    wire _N62;
+    wire _N63;
+    wire _N64;
+    wire _N65;
+    wire _N66;
+    wire _N116;
+    wire _N117;
+    wire _N118;
+    wire _N119;
+    wire _N120;
+    wire _N121;
+    wire _N122;
+    wire _N123;
+    wire _N124;
+    wire _N125;
+    wire _N126;
+    wire _N127;
+    wire _N128;
+    wire _N129;
+    wire _N130;
+    wire _N131;
+    wire _N132;
+    wire _N133;
+    wire _N134;
+    wire _N135;
+    wire _N136;
+    wire _N137;
+    wire _N138;
+    wire _N334;
+    wire _N335;
+    wire _N336;
+    wire _N337;
+    wire _N338;
+    wire _N339;
+    wire _N340;
+    wire _N341;
+    wire _N342;
+    wire _N343;
+    wire _N344;
+    wire _N345;
+    wire _N346;
+    wire _N347;
+    wire _N348;
+    wire _N349;
+    wire _N350;
+    wire _N351;
+    wire _N352;
+    wire _N606;
+    wire _N607;
+    wire _N608;
+    wire _N609;
+    wire _N610;
+    wire _N611;
+    wire _N612;
+    wire _N613;
+    wire _N614;
+    wire _N615;
+    wire _N616;
+    wire _N617;
+    wire _N618;
+    wire _N619;
+    wire _N620;
+    wire _N621;
+    wire _N622;
+    wire _N623;
+    wire _N624;
+    wire _N625;
+    wire _N669;
+    wire _N670;
+    wire _N671;
+    wire _N672;
+    wire _N673;
+    wire _N674;
+    wire _N675;
+    wire _N676;
+    wire _N677;
+    wire _N678;
+    wire _N679;
+    wire _N680;
+    wire _N681;
+    wire _N682;
+    wire _N683;
+    wire _N684;
+    wire _N685;
+    wire _N686;
+    wire _N687;
+    wire _N688;
+    wire _N732;
+    wire _N733;
+    wire _N734;
+    wire _N735;
+    wire _N736;
+    wire _N737;
+    wire _N738;
+    wire _N739;
+    wire _N740;
+    wire _N741;
+    wire _N742;
+    wire _N743;
+    wire _N744;
+    wire _N745;
+    wire _N746;
+    wire _N747;
+    wire _N748;
+    wire _N749;
+    wire _N750;
+    wire _N751;
+    wire _N810;
+    wire _N813;
+    wire _N817;
+    wire _N823;
+    wire _N825;
+    wire _N842;
+    wire _N843;
+    wire _N847;
+    wire _N850;
+    wire _N865;
+    wire _N877;
+    wire _N895;
+    wire _N896;
+    wire _N897;
+    wire _N900;
+    wire _N902;
+    wire _N903;
+    wire _N906;
+    wire _N907;
+    wire _N910;
+    wire _N911;
+    wire _N913;
+    wire _N914;
+    wire _N924;
+    wire _N926;
+    wire _N928;
+    wire _N952;
+    wire _N954;
+    wire _N956;
+    wire _N966;
+    wire _N975;
+    wire _N979;
+    wire _N987;
+    wire _N991;
+    wire _N994;
+    wire _N997;
+    wire _N1010;
+    wire _N1015;
+    wire _N1032;
+    wire _N1056;
+    wire _N1057;
+    wire _N1100;
+    wire _N1103;
+    wire _N1107;
+    wire _N1115;
+    wire _N1117;
+    wire _N1119;
+    wire _N1121;
+    wire _N1128;
+    wire _N1129;
+    wire _N1130;
+    wire _N1131;
+    wire _N1132;
+    wire _N1135;
+    wire _N1143;
+    wire _N1146;
+    wire _N1148;
+    wire _N1149;
+    wire _N1151;
+    wire _N1153;
+    wire _N1155;
+    wire _N1158;
+    wire _N1159;
+    wire _N1161;
+    wire _N1162;
+    wire _N1163;
+    wire _N1167;
+    wire _N1168;
+    wire _N1171;
+    wire _N1172;
+    wire _N1173;
+    wire _N1174;
+    wire _N1175;
+    wire _N1176;
+    wire _N1177;
+    wire _N1178;
+    wire _N1179;
+    wire _N1180;
+    wire _N1181;
+    wire _N1182;
+    wire _N1183;
+    wire _N1184;
+    wire _N1185;
+    wire _N1186;
+    wire _N1187;
+    wire _N1188;
+    wire _N1189;
+    wire _N1190;
+    wire _N1191;
+    wire _N1192;
+    wire _N1193;
+    wire _N1194;
+    wire _N1195;
+    wire _N1196;
+    wire _N1197;
+    wire _N1198;
+    wire _N1199;
+    wire _N1200;
+    wire _N1201;
+    wire _N1202;
+    wire _N1203;
+    wire _N1204;
+    wire _N1205;
+    wire _N1206;
+    wire _N1208;
+    wire _N1209;
+    wire _N1210;
+    wire _N1211;
+    wire _N1212;
+    wire _N1213;
+    wire _N1214;
+    wire _N1215;
+    wire _N1216;
+    wire _N1217;
+    wire _N1218;
+    wire _N1219;
+    wire _N1220;
+    wire _N1221;
+    wire _N1222;
+    wire _N1223;
+    wire _N1225;
+    wire _N1227;
+    wire _N1229;
+    wire _N1231;
+    wire _N1233;
+    wire _N1235;
+    wire _N1237;
+    wire _N1239;
+    wire _N1241;
+    wire _N1243;
+    wire _N1245;
+    wire _N1247;
+    wire _N1249;
+    wire _N1251;
+    wire _N1253;
+    wire _N1255;
+    wire _N1257;
+    wire _N1259;
+    wire _N1261;
+    wire _N1263;
+    wire _N1265;
+    wire _N1267;
+    wire _N1269;
+    wire _N1271;
+    wire _N1273;
+    wire _N1275;
+    wire _N1277;
+    wire _N1279;
+    wire _N1281;
+    wire _N1283;
+    wire _N1285;
+    wire _N1287;
+    wire _N1289;
+    wire _N1291;
+    wire _N1293;
+    wire _N1295;
+    wire _N1297;
+    wire _N1299;
+    wire _N1301;
+    wire _N1303;
+    wire _N1305;
+    wire _N1314;
+    wire _N1341;
+    wire _N1351;
+    wire _N1353;
+    wire _N1355;
+    wire _N1358;
+    wire _N1359;
+    wire _N1360;
+    wire _N1366;
+    wire _N1423;
+    wire _N1432;
+    wire _N1500;
+    wire _N1501;
+    wire _N1503;
+    wire _N1516;
+    wire _N1519;
+    wire _N1522;
+    wire _N1526;
+    wire _N1535;
+    wire _N1538;
+    wire _N1542;
+    wire _N1544;
+    wire _N1545;
+    wire _N1555;
+    wire _N1561;
+    wire _N1565;
+    wire _N1571;
+    wire _N1581;
+    wire _N1583;
+    wire _N1595;
+    wire _N1596;
+    wire _N1618;
+    wire _N1620;
+    wire _N1631;
+    wire _N1635;
+    wire [20:0] counter_e_a;
+    wire [20:0] counter_e_b;
+    wire [19:0] counter_p;
+    wire [5:0] counter_rgb;
+    wire [23:0] counter_rgb_t;
+    wire [20:0] counter_t;
+    wire [1:0] curr_state_a;
+    wire [1:0] curr_state_b;
+    wire [20:0] dis_reg_a;
+    wire [20:0] dis_reg_b;
+    wire echo_a1;
+    wire echo_a2;
+    wire echo_b1;
+    wire echo_b2;
+    wire [4:0] i;
+    wire [1:0] next_state_a;
+    wire [1:0] next_state_b;
+    wire nt_a;
+    wire nt_echo_a;
+    wire nt_echo_b;
+    wire nt_echo_en_n;
+    wire nt_en_ab;
+    wire nt_l1;
+    wire nt_l2;
+    wire nt_l3;
+    wire nt_l4;
+    wire nt_nr_a;
+    wire nt_nr_a_led;
+    wire nt_nr_b;
+    wire nt_nr_b_led;
+    wire nt_p1;
+    wire nt_p2;
+    wire nt_p3;
+    wire nt_pwm1;
+    wire nt_pwm2;
+    wire nt_pwm3;
+    wire nt_sys_clk;
+    wire nt_sys_rst_n;
+    wire nt_trig;
+    wire [23:0] reg_rgb;
+    wire state_rgb_0;
+    wire state_rgb_0_inv;
+    wire state_rgb_1;
+    wire state_rgb_2;
+    wire state_rgb_2_inv;
+
+    GTP_GRS GRS_INST (
+            .GRS_N (1'b1));
+
+    GTP_INV N0_vname (
+            .Z (N0),
+            .I (nt_sys_rst_n));
+    // defparam N0_vname.orig_name = N0;
+
+    GTP_LUT3 /* N3_mux2 */ #(
+            .INIT(8'b00010011))
+        N3_mux2 (
+            .Z (_N895),
+            .I0 (counter_rgb[1]),
+            .I1 (counter_rgb[2]),
+            .I2 (counter_rgb[0]));
+	// Z = (~I1&~I2)|(~I0&~I1) ;
+
+    GTP_LUT2 /* N3_mux5_1 */ #(
+            .INIT(4'b0111))
+        N3_mux5_1 (
+            .Z (_N1341),
+            .I0 (counter_rgb[3]),
+            .I1 (counter_rgb[4]));
+	// Z = (~I1)|(~I0) ;
+
+    GTP_LUT5CARRY /* N5_0 */ #(
+            .INIT(32'b00001111000011110000000000000000), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N5_0 (
+            .COUT (_N62),
+            .Z (N5[0]),
+            .CIN (),
+            .I0 (),
+            .I1 (),
+            .I2 (counter_rgb[0]),
+            .I3 (),
+            .I4 (counter_rgb[0]),
+            .ID ());
+	// ../source/rtl/smart_car.v:39
+
+    GTP_LUT5CARRY /* N5_1 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N5_1 (
+            .COUT (_N63),
+            .Z (N5[1]),
+            .CIN (_N62),
+            .I0 (),
+            .I1 (counter_rgb[1]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:39
+
+    GTP_LUT5CARRY /* N5_2 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N5_2 (
+            .COUT (_N64),
+            .Z (N5[2]),
+            .CIN (_N63),
+            .I0 (),
+            .I1 (counter_rgb[2]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:39
+
+    GTP_LUT5CARRY /* N5_3 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N5_3 (
+            .COUT (_N65),
+            .Z (N5[3]),
+            .CIN (_N64),
+            .I0 (),
+            .I1 (counter_rgb[3]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:39
+
+    GTP_LUT5CARRY /* N5_4 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N5_4 (
+            .COUT (_N66),
+            .Z (N5[4]),
+            .CIN (_N65),
+            .I0 (),
+            .I1 (counter_rgb[4]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:39
+
+    GTP_LUT5CARRY /* N5_5 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N5_5 (
+            .COUT (),
+            .Z (N5[5]),
+            .CIN (_N66),
+            .I0 (),
+            .I1 (counter_rgb[5]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:39
+
+    GTP_LUT3 /* N14_mux5_4 */ #(
+            .INIT(8'b01111111))
+        N14_mux5_4 (
+            .Z (_N1358),
+            .I0 (counter_rgb_t[4]),
+            .I1 (counter_rgb_t[3]),
+            .I2 (counter_rgb_t[5]));
+	// Z = (~I2)|(~I1)|(~I0) ;
+
+    GTP_LUT5 /* N14_mux6 */ #(
+            .INIT(32'b01010101010101010000000000000001))
+        N14_mux6 (
+            .Z (_N954),
+            .I0 (counter_rgb_t[6]),
+            .I1 (counter_rgb_t[0]),
+            .I2 (counter_rgb_t[1]),
+            .I3 (counter_rgb_t[2]),
+            .I4 (_N1358));
+	// Z = (~I0&I4)|(~I0&~I1&~I2&~I3) ;
+
+    GTP_LUT5 /* N14_mux10 */ #(
+            .INIT(32'b01111111011111110101111101111111))
+        N14_mux10 (
+            .Z (_N956),
+            .I0 (counter_rgb_t[9]),
+            .I1 (counter_rgb_t[8]),
+            .I2 (counter_rgb_t[10]),
+            .I3 (counter_rgb_t[7]),
+            .I4 (_N954));
+	// Z = (~I2)|(~I0)|(~I1&~I3)|(~I1&I4) ;
+
+    GTP_LUT3 /* N18_15 */ #(
+            .INIT(8'b00000001))
+        N18_15 (
+            .Z (_N1542),
+            .I0 (counter_rgb_t[14]),
+            .I1 (counter_rgb_t[13]),
+            .I2 (counter_rgb_t[23]));
+	// Z = ~I0&~I1&~I2 ;
+
+    GTP_LUT4 /* N18_17 */ #(
+            .INIT(16'b0000000000000001))
+        N18_17 (
+            .Z (_N1544),
+            .I0 (counter_rgb_t[19]),
+            .I1 (counter_rgb_t[12]),
+            .I2 (counter_rgb_t[11]),
+            .I3 (counter_rgb_t[20]));
+	// Z = ~I0&~I1&~I2&~I3 ;
+
+    GTP_LUT4 /* N18_18 */ #(
+            .INIT(16'b0000000000000010))
+        N18_18 (
+            .Z (_N1545),
+            .I0 (_N1542),
+            .I1 (counter_rgb_t[22]),
+            .I2 (counter_rgb_t[21]),
+            .I3 (_N1432));
+	// Z = I0&~I1&~I2&~I3 ;
+
+    GTP_LUT5 /* N18_23 */ #(
+            .INIT(32'b00001000000000000000000000000000))
+        N18_23 (
+            .Z (_N1535),
+            .I0 (counter_rgb[4]),
+            .I1 (counter_rgb[3]),
+            .I2 (counter_rgb[2]),
+            .I3 (counter_rgb[1]),
+            .I4 (_N956));
+	// Z = I0&I1&~I2&I3&I4 ;
+
+    GTP_LUT5 /* N18_24 */ #(
+            .INIT(32'b10000000000000000000000000000000))
+        N18_24 (
+            .Z (N18),
+            .I0 (_N1545),
+            .I1 (_N1544),
+            .I2 (counter_rgb[5]),
+            .I3 (counter_rgb[0]),
+            .I4 (_N1535));
+	// Z = I0&I1&I2&I3&I4 ;
+
+    GTP_LUT5CARRY /* N20_0 */ #(
+            .INIT(32'b00001111000011110000000000000000), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N20_0 (
+            .COUT (_N116),
+            .Z (N20[0]),
+            .CIN (),
+            .I0 (),
+            .I1 (),
+            .I2 (counter_rgb_t[0]),
+            .I3 (),
+            .I4 (counter_rgb_t[0]),
+            .ID ());
+	// ../source/rtl/smart_car.v:53
+
+    GTP_LUT5CARRY /* N20_1 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N20_1 (
+            .COUT (_N117),
+            .Z (N20[1]),
+            .CIN (_N116),
+            .I0 (),
+            .I1 (counter_rgb_t[1]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:53
+
+    GTP_LUT5CARRY /* N20_2 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N20_2 (
+            .COUT (_N118),
+            .Z (N20[2]),
+            .CIN (_N117),
+            .I0 (),
+            .I1 (counter_rgb_t[2]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:53
+
+    GTP_LUT5CARRY /* N20_3 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N20_3 (
+            .COUT (_N119),
+            .Z (N20[3]),
+            .CIN (_N118),
+            .I0 (),
+            .I1 (counter_rgb_t[3]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:53
+
+    GTP_LUT5CARRY /* N20_4 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N20_4 (
+            .COUT (_N120),
+            .Z (N20[4]),
+            .CIN (_N119),
+            .I0 (),
+            .I1 (counter_rgb_t[4]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:53
+
+    GTP_LUT5CARRY /* N20_5 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N20_5 (
+            .COUT (_N121),
+            .Z (N20[5]),
+            .CIN (_N120),
+            .I0 (),
+            .I1 (counter_rgb_t[5]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:53
+
+    GTP_LUT5CARRY /* N20_6 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N20_6 (
+            .COUT (_N122),
+            .Z (N20[6]),
+            .CIN (_N121),
+            .I0 (),
+            .I1 (counter_rgb_t[6]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:53
+
+    GTP_LUT5CARRY /* N20_7 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N20_7 (
+            .COUT (_N123),
+            .Z (N20[7]),
+            .CIN (_N122),
+            .I0 (),
+            .I1 (counter_rgb_t[7]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:53
+
+    GTP_LUT5CARRY /* N20_8 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N20_8 (
+            .COUT (_N124),
+            .Z (N20[8]),
+            .CIN (_N123),
+            .I0 (),
+            .I1 (counter_rgb_t[8]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:53
+
+    GTP_LUT5CARRY /* N20_9 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N20_9 (
+            .COUT (_N125),
+            .Z (N20[9]),
+            .CIN (_N124),
+            .I0 (),
+            .I1 (counter_rgb_t[9]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:53
+
+    GTP_LUT5CARRY /* N20_10 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N20_10 (
+            .COUT (_N126),
+            .Z (N20[10]),
+            .CIN (_N125),
+            .I0 (),
+            .I1 (counter_rgb_t[10]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:53
+
+    GTP_LUT5CARRY /* N20_11 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N20_11 (
+            .COUT (_N127),
+            .Z (N20[11]),
+            .CIN (_N126),
+            .I0 (),
+            .I1 (counter_rgb_t[11]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:53
+
+    GTP_LUT5CARRY /* N20_12 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N20_12 (
+            .COUT (_N128),
+            .Z (N20[12]),
+            .CIN (_N127),
+            .I0 (),
+            .I1 (counter_rgb_t[12]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:53
+
+    GTP_LUT5CARRY /* N20_13 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N20_13 (
+            .COUT (_N129),
+            .Z (N20[13]),
+            .CIN (_N128),
+            .I0 (),
+            .I1 (counter_rgb_t[13]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:53
+
+    GTP_LUT5CARRY /* N20_14 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N20_14 (
+            .COUT (_N130),
+            .Z (N20[14]),
+            .CIN (_N129),
+            .I0 (),
+            .I1 (counter_rgb_t[14]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:53
+
+    GTP_LUT5CARRY /* N20_15 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N20_15 (
+            .COUT (_N131),
+            .Z (N20[15]),
+            .CIN (_N130),
+            .I0 (),
+            .I1 (counter_rgb_t[15]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:53
+
+    GTP_LUT5CARRY /* N20_16 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N20_16 (
+            .COUT (_N132),
+            .Z (N20[16]),
+            .CIN (_N131),
+            .I0 (),
+            .I1 (counter_rgb_t[16]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:53
+
+    GTP_LUT5CARRY /* N20_17 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N20_17 (
+            .COUT (_N133),
+            .Z (N20[17]),
+            .CIN (_N132),
+            .I0 (),
+            .I1 (counter_rgb_t[17]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:53
+
+    GTP_LUT5CARRY /* N20_18 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N20_18 (
+            .COUT (_N134),
+            .Z (N20[18]),
+            .CIN (_N133),
+            .I0 (),
+            .I1 (counter_rgb_t[18]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:53
+
+    GTP_LUT5CARRY /* N20_19 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N20_19 (
+            .COUT (_N135),
+            .Z (N20[19]),
+            .CIN (_N134),
+            .I0 (),
+            .I1 (counter_rgb_t[19]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:53
+
+    GTP_LUT5CARRY /* N20_20 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N20_20 (
+            .COUT (_N136),
+            .Z (N20[20]),
+            .CIN (_N135),
+            .I0 (),
+            .I1 (counter_rgb_t[20]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:53
+
+    GTP_LUT5CARRY /* N20_21 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N20_21 (
+            .COUT (_N137),
+            .Z (N20[21]),
+            .CIN (_N136),
+            .I0 (),
+            .I1 (counter_rgb_t[21]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:53
+
+    GTP_LUT5CARRY /* N20_22 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N20_22 (
+            .COUT (_N138),
+            .Z (N20[22]),
+            .CIN (_N137),
+            .I0 (),
+            .I1 (counter_rgb_t[22]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:53
+
+    GTP_LUT5CARRY /* N20_23 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N20_23 (
+            .COUT (),
+            .Z (N20[23]),
+            .CIN (_N138),
+            .I0 (),
+            .I1 (counter_rgb_t[23]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:53
+
+    GTP_LUT3 /* N22_ac2 */ #(
+            .INIT(8'b10000000))
+        N22_ac2 (
+            .Z (_N22),
+            .I0 (i[1]),
+            .I1 (i[0]),
+            .I2 (i[2]));
+	// Z = I0&I1&I2 ;
+
+    GTP_LUT1 /* N31 */ #(
+            .INIT(2'b01))
+        N31 (
+            .Z (nt_l1),
+            .I0 (nt_l2));
+	// Z = ~I0 ;
+
+    GTP_LUT3 /* N32_3 */ #(
+            .INIT(8'b00000010))
+        N32_3 (
+            .Z (N32),
+            .I0 (nt_en_ab),
+            .I1 (nt_a),
+            .I2 (nt_l2));
+	// Z = I0&~I1&~I2 ;
+
+    GTP_LUT4 /* N87inv */ #(
+            .INIT(16'b0010001100110011))
+        N87inv (
+            .Z (N87_inv),
+            .I0 (_N1423),
+            .I1 (N300),
+            .I2 (_N1544),
+            .I3 (_N1545));
+	// Z = (~I1&~I3)|(~I1&~I2)|(I0&~I1) ;
+
+    GTP_LUT4 /* N95_mux9_5 */ #(
+            .INIT(16'b1000000000000000))
+        N95_mux9_5 (
+            .Z (_N1516),
+            .I0 (counter_rgb_t[7]),
+            .I1 (counter_rgb_t[6]),
+            .I2 (counter_rgb_t[5]),
+            .I3 (counter_rgb_t[9]));
+	// Z = I0&I1&I2&I3 ;
+
+    GTP_LUT4 /* N95_mux23_9 */ #(
+            .INIT(16'b1111111111111110))
+        N95_mux23_9 (
+            .Z (_N1432),
+            .I0 (counter_rgb_t[17]),
+            .I1 (counter_rgb_t[16]),
+            .I2 (counter_rgb_t[15]),
+            .I3 (counter_rgb_t[18]));
+	// Z = (I0)|(I1)|(I2)|(I3) ;
+
+    GTP_LUT5 /* N95_mux23_14 */ #(
+            .INIT(32'b11111010111110001111000011110000))
+        N95_mux23_14 (
+            .Z (_N1423),
+            .I0 (counter_rgb_t[8]),
+            .I1 (counter_rgb_t[4]),
+            .I2 (counter_rgb_t[10]),
+            .I3 (counter_rgb_t[3]),
+            .I4 (_N1516));
+	// Z = (I2)|(I0&I1&I4)|(I0&I3&I4) ;
+
+    GTP_LUT4 /* N98_mux3 */ #(
+            .INIT(16'b0000000001111111))
+        N98_mux3 (
+            .Z (_N1032),
+            .I0 (counter_rgb_t[5]),
+            .I1 (counter_rgb_t[4]),
+            .I2 (counter_rgb_t[3]),
+            .I3 (counter_rgb_t[6]));
+	// Z = (~I2&~I3)|(~I1&~I3)|(~I0&~I3) ;
+
+    GTP_LUT5 /* N98_mux7 */ #(
+            .INIT(32'b01111111011111110101111101111111))
+        N98_mux7 (
+            .Z (_N966),
+            .I0 (counter_rgb_t[9]),
+            .I1 (counter_rgb_t[8]),
+            .I2 (counter_rgb_t[10]),
+            .I3 (counter_rgb_t[7]),
+            .I4 (_N1032));
+	// Z = (~I2)|(~I0)|(~I1&~I3)|(~I1&I4) ;
+
+    GTP_LUT4 /* N104_25 */ #(
+            .INIT(16'b0100010001010000))
+        N104_25 (
+            .Z (_N1100),
+            .I0 (i[4]),
+            .I1 (reg_rgb[8]),
+            .I2 (reg_rgb[16]),
+            .I3 (i[3]));
+	// Z = (~I0&I2&~I3)|(~I0&I1&I3) ;
+
+    GTP_LUT5 /* N107_mux4_3 */ #(
+            .INIT(32'b00000000000000000001010101010101))
+        N107_mux4_3 (
+            .Z (_N896),
+            .I0 (counter_rgb[4]),
+            .I1 (counter_rgb[3]),
+            .I2 (counter_rgb[2]),
+            .I3 (counter_rgb[1]),
+            .I4 (counter_rgb[5]));
+	// Z = (~I0&~I3&~I4)|(~I0&~I2&~I4)|(~I0&~I1&~I4) ;
+
+    GTP_LUT5 /* N110_mux5 */ #(
+            .INIT(32'b00110011001100110000001100010011))
+        N110_mux5 (
+            .Z (_N897),
+            .I0 (counter_rgb[0]),
+            .I1 (counter_rgb[5]),
+            .I2 (counter_rgb[2]),
+            .I3 (counter_rgb[1]),
+            .I4 (_N1341));
+	// Z = (~I1&~I2)|(~I1&I4)|(~I0&~I1&~I3) ;
+
+    GTP_MUX2LUT6 N112_vname (
+            .Z (N112),
+            .I0 (_N896),
+            .I1 (_N897),
+            .S (_N1100));
+    // defparam N112_vname.orig_name = N112;
+	// ../source/rtl/smart_car.v:109
+
+    GTP_LUT5 /* N114 */ #(
+            .INIT(32'b10101111001011111111111111111111))
+        N114 (
+            .Z (_N1),
+            .I0 (_N1423),
+            .I1 (_N966),
+            .I2 (_N1544),
+            .I3 (N112),
+            .I4 (_N1545));
+	// Z = (~I4)|(~I2)|(I0&~I1)|(I0&I3) ;
+
+    GTP_LUT2 /* N117_mux5_2 */ #(
+            .INIT(4'b0111))
+        N117_mux5_2 (
+            .Z (_N1526),
+            .I0 (counter_p[1]),
+            .I1 (counter_p[2]));
+	// Z = (~I1)|(~I0) ;
+
+    GTP_LUT5 /* N117_mux5_6 */ #(
+            .INIT(32'b11111111111111110111111111111111))
+        N117_mux5_6 (
+            .Z (_N817),
+            .I0 (counter_p[0]),
+            .I1 (counter_p[5]),
+            .I2 (counter_p[3]),
+            .I3 (counter_p[4]),
+            .I4 (_N1526));
+	// Z = (~I3)|(~I2)|(~I1)|(~I0)|(I4) ;
+
+    GTP_LUT5 /* N117_mux9 */ #(
+            .INIT(32'b01010101010101110101010101010101))
+        N117_mux9 (
+            .Z (_N813),
+            .I0 (counter_p[9]),
+            .I1 (counter_p[8]),
+            .I2 (counter_p[6]),
+            .I3 (counter_p[7]),
+            .I4 (_N817));
+	// Z = (~I0)|(~I1&~I2&~I3&I4) ;
+
+    GTP_LUT4 /* N117_mux13_2 */ #(
+            .INIT(16'b0000000000000001))
+        N117_mux13_2 (
+            .Z (_N1583),
+            .I0 (counter_p[12]),
+            .I1 (counter_p[11]),
+            .I2 (counter_p[10]),
+            .I3 (counter_p[13]));
+	// Z = ~I0&~I1&~I2&~I3 ;
+
+    GTP_LUT4 /* N117_mux19_3 */ #(
+            .INIT(16'b0111111111111111))
+        N117_mux19_3 (
+            .Z (_N1519),
+            .I0 (counter_p[18]),
+            .I1 (counter_p[17]),
+            .I2 (counter_p[16]),
+            .I3 (counter_p[19]));
+	// Z = (~I3)|(~I2)|(~I1)|(~I0) ;
+
+    GTP_LUT5 /* N117_mux19_8 */ #(
+            .INIT(32'b11001100111011111100110011001111))
+        N117_mux19_8 (
+            .Z (_N975),
+            .I0 (_N1583),
+            .I1 (_N1519),
+            .I2 (counter_p[14]),
+            .I3 (counter_p[15]),
+            .I4 (_N813));
+	// Z = (I1)|(~I2&~I3)|(I0&~I3&I4) ;
+
+    GTP_LUT5CARRY /* N119_0 */ #(
+            .INIT(32'b00001111000011110000000000000000), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N119_0 (
+            .COUT (_N334),
+            .Z (N119[0]),
+            .CIN (),
+            .I0 (),
+            .I1 (),
+            .I2 (counter_p[0]),
+            .I3 (),
+            .I4 (counter_p[0]),
+            .ID ());
+	// ../source/rtl/smart_car.v:131
+
+    GTP_LUT5CARRY /* N119_1 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N119_1 (
+            .COUT (_N335),
+            .Z (N119[1]),
+            .CIN (_N334),
+            .I0 (),
+            .I1 (counter_p[1]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:131
+
+    GTP_LUT5CARRY /* N119_2 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N119_2 (
+            .COUT (_N336),
+            .Z (N119[2]),
+            .CIN (_N335),
+            .I0 (),
+            .I1 (counter_p[2]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:131
+
+    GTP_LUT5CARRY /* N119_3 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N119_3 (
+            .COUT (_N337),
+            .Z (N119[3]),
+            .CIN (_N336),
+            .I0 (),
+            .I1 (counter_p[3]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:131
+
+    GTP_LUT5CARRY /* N119_4 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N119_4 (
+            .COUT (_N338),
+            .Z (N119[4]),
+            .CIN (_N337),
+            .I0 (),
+            .I1 (counter_p[4]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:131
+
+    GTP_LUT5CARRY /* N119_5 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N119_5 (
+            .COUT (_N339),
+            .Z (N119[5]),
+            .CIN (_N338),
+            .I0 (),
+            .I1 (counter_p[5]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:131
+
+    GTP_LUT5CARRY /* N119_6 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N119_6 (
+            .COUT (_N340),
+            .Z (N119[6]),
+            .CIN (_N339),
+            .I0 (),
+            .I1 (counter_p[6]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:131
+
+    GTP_LUT5CARRY /* N119_7 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N119_7 (
+            .COUT (_N341),
+            .Z (N119[7]),
+            .CIN (_N340),
+            .I0 (),
+            .I1 (counter_p[7]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:131
+
+    GTP_LUT5CARRY /* N119_8 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N119_8 (
+            .COUT (_N342),
+            .Z (N119[8]),
+            .CIN (_N341),
+            .I0 (),
+            .I1 (counter_p[8]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:131
+
+    GTP_LUT5CARRY /* N119_9 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N119_9 (
+            .COUT (_N343),
+            .Z (N119[9]),
+            .CIN (_N342),
+            .I0 (),
+            .I1 (counter_p[9]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:131
+
+    GTP_LUT5CARRY /* N119_10 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N119_10 (
+            .COUT (_N344),
+            .Z (N119[10]),
+            .CIN (_N343),
+            .I0 (),
+            .I1 (counter_p[10]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:131
+
+    GTP_LUT5CARRY /* N119_11 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N119_11 (
+            .COUT (_N345),
+            .Z (N119[11]),
+            .CIN (_N344),
+            .I0 (),
+            .I1 (counter_p[11]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:131
+
+    GTP_LUT5CARRY /* N119_12 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N119_12 (
+            .COUT (_N346),
+            .Z (N119[12]),
+            .CIN (_N345),
+            .I0 (),
+            .I1 (counter_p[12]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:131
+
+    GTP_LUT5CARRY /* N119_13 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N119_13 (
+            .COUT (_N347),
+            .Z (N119[13]),
+            .CIN (_N346),
+            .I0 (),
+            .I1 (counter_p[13]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:131
+
+    GTP_LUT5CARRY /* N119_14 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N119_14 (
+            .COUT (_N348),
+            .Z (N119[14]),
+            .CIN (_N347),
+            .I0 (),
+            .I1 (counter_p[14]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:131
+
+    GTP_LUT5CARRY /* N119_15 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N119_15 (
+            .COUT (_N349),
+            .Z (N119[15]),
+            .CIN (_N348),
+            .I0 (),
+            .I1 (counter_p[15]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:131
+
+    GTP_LUT5CARRY /* N119_16 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N119_16 (
+            .COUT (_N350),
+            .Z (N119[16]),
+            .CIN (_N349),
+            .I0 (),
+            .I1 (counter_p[16]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:131
+
+    GTP_LUT5CARRY /* N119_17 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N119_17 (
+            .COUT (_N351),
+            .Z (N119[17]),
+            .CIN (_N350),
+            .I0 (),
+            .I1 (counter_p[17]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:131
+
+    GTP_LUT5CARRY /* N119_18 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N119_18 (
+            .COUT (_N352),
+            .Z (N119[18]),
+            .CIN (_N351),
+            .I0 (),
+            .I1 (counter_p[18]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:131
+
+    GTP_LUT5CARRY /* N119_19 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N119_19 (
+            .COUT (),
+            .Z (N119[19]),
+            .CIN (_N352),
+            .I0 (),
+            .I1 (counter_p[19]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:131
+
+    GTP_LUT4 /* N125_mux3 */ #(
+            .INIT(16'b0000000111111111))
+        N125_mux3 (
+            .Z (_N877),
+            .I0 (counter_p[5]),
+            .I1 (counter_p[4]),
+            .I2 (counter_p[3]),
+            .I3 (counter_p[6]));
+	// Z = (~I3)|(~I0&~I1&~I2) ;
+
+    GTP_LUT5 /* N125_mux9 */ #(
+            .INIT(32'b00001111000011110000101100001111))
+        N125_mux9 (
+            .Z (_N979),
+            .I0 (_N1351),
+            .I1 (counter_p[8]),
+            .I2 (counter_p[12]),
+            .I3 (counter_p[7]),
+            .I4 (_N877));
+	// Z = (~I2&~I3)|(~I1&~I2)|(I0&~I2)|(~I2&I4) ;
+
+    GTP_LUT5 /* N125_mux16 */ #(
+            .INIT(32'b00100010101010100010001000101010))
+        N125_mux16 (
+            .Z (_N900),
+            .I0 (_N1360),
+            .I1 (counter_p[15]),
+            .I2 (counter_p[13]),
+            .I3 (counter_p[14]),
+            .I4 (_N979));
+	// Z = (I0&~I1)|(I0&~I2&~I3)|(I0&~I3&I4) ;
+
+    GTP_LUT4 /* N125_mux16_1 */ #(
+            .INIT(16'b0000000000000001))
+        N125_mux16_1 (
+            .Z (_N1360),
+            .I0 (counter_p[18]),
+            .I1 (counter_p[17]),
+            .I2 (counter_p[16]),
+            .I3 (counter_p[19]));
+	// Z = ~I0&~I1&~I2&~I3 ;
+
+    GTP_LUT5 /* N128_mux4 */ #(
+            .INIT(32'b00010001000101011111111111111111))
+        N128_mux4 (
+            .Z (_N842),
+            .I0 (counter_p[6]),
+            .I1 (counter_p[5]),
+            .I2 (counter_p[3]),
+            .I3 (counter_p[4]),
+            .I4 (counter_p[7]));
+	// Z = (~I4)|(~I0&~I1)|(~I0&~I2&~I3) ;
+
+    GTP_LUT2 /* N128_mux9_1 */ #(
+            .INIT(4'b0001))
+        N128_mux9_1 (
+            .Z (_N1355),
+            .I0 (counter_p[10]),
+            .I1 (counter_p[11]));
+	// Z = ~I0&~I1 ;
+
+    GTP_LUT5 /* N128_mux9_7 */ #(
+            .INIT(32'b00000010000000100000000000000010))
+        N128_mux9_7 (
+            .Z (_N903),
+            .I0 (_N1355),
+            .I1 (counter_p[9]),
+            .I2 (counter_p[12]),
+            .I3 (counter_p[8]),
+            .I4 (_N842));
+	// Z = (I0&~I1&~I2&~I3)|(I0&~I1&~I2&I4) ;
+
+    GTP_LUT5 /* N128_mux16_3 */ #(
+            .INIT(32'b00100010001000100000001000100010))
+        N128_mux16_3 (
+            .Z (_N902),
+            .I0 (_N1360),
+            .I1 (counter_p[15]),
+            .I2 (counter_p[13]),
+            .I3 (counter_p[14]),
+            .I4 (_N903));
+	// Z = (I0&~I1&~I3)|(I0&~I1&~I2)|(I0&~I1&I4) ;
+
+    GTP_MUX2LUT6 N130 (
+            .Z (nt_pwm1),
+            .I0 (_N900),
+            .I1 (_N902),
+            .S (nt_p1));
+	// ../source/rtl/smart_car.v:146
+
+    GTP_LUT2 /* N133 */ #(
+            .INIT(4'b0001))
+        N133_vname (
+            .Z (N133),
+            .I0 (nt_p2),
+            .I1 (nt_p3));
+    // defparam N133_vname.orig_name = N133;
+	// Z = ~I0&~I1 ;
+	// ../source/rtl/smart_car.v:153
+
+    GTP_LUT5 /* N135_mux6_4 */ #(
+            .INIT(32'b00000000000000000000000000000001))
+        N135_mux6_4 (
+            .Z (_N1581),
+            .I0 (counter_p[8]),
+            .I1 (counter_p[5]),
+            .I2 (counter_p[3]),
+            .I3 (counter_p[4]),
+            .I4 (counter_p[9]));
+	// Z = ~I0&~I1&~I2&~I3&~I4 ;
+
+    GTP_LUT5 /* N135_mux8 */ #(
+            .INIT(32'b00011111111111110000111111111111))
+        N135_mux8 (
+            .Z (_N825),
+            .I0 (counter_p[7]),
+            .I1 (counter_p[6]),
+            .I2 (counter_p[10]),
+            .I3 (counter_p[11]),
+            .I4 (_N1581));
+	// Z = (~I3)|(~I2)|(~I0&~I1&I4) ;
+
+    GTP_LUT5 /* N135_mux12 */ #(
+            .INIT(32'b00010001000101010001000100010001))
+        N135_mux12 (
+            .Z (_N987),
+            .I0 (counter_p[15]),
+            .I1 (counter_p[14]),
+            .I2 (counter_p[12]),
+            .I3 (counter_p[13]),
+            .I4 (_N825));
+	// Z = (~I0&~I1)|(~I0&~I2&~I3&I4) ;
+
+    GTP_LUT5 /* N135_mux16 */ #(
+            .INIT(32'b00000000000100010000000000000001))
+        N135_mux16 (
+            .Z (_N907),
+            .I0 (counter_p[19]),
+            .I1 (counter_p[18]),
+            .I2 (counter_p[16]),
+            .I3 (counter_p[17]),
+            .I4 (_N987));
+	// Z = (~I0&~I1&~I2&~I3)|(~I0&~I1&~I3&I4) ;
+
+    GTP_LUT4 /* N140 */ #(
+            .INIT(16'b1010101110101000))
+        N140 (
+            .Z (nt_pwm2),
+            .I0 (_N902),
+            .I1 (nt_p3),
+            .I2 (nt_p2),
+            .I3 (_N907));
+	// Z = (I0&I1)|(I0&I2)|(~I1&~I2&I3) ;
+	// ../source/rtl/smart_car.v:161
+
+    GTP_LUT5 /* N146_mux7_4 */ #(
+            .INIT(32'b00000000000000010000000000000000))
+        N146_mux7_4 (
+            .Z (_N911),
+            .I0 (counter_p[9]),
+            .I1 (counter_p[8]),
+            .I2 (counter_p[10]),
+            .I3 (counter_p[7]),
+            .I4 (_N877));
+	// Z = ~I0&~I1&~I2&~I3&I4 ;
+
+    GTP_LUT5 /* N146_mux13_6 */ #(
+            .INIT(32'b01110111111111110111011101111111))
+        N146_mux13_6 (
+            .Z (_N1571),
+            .I0 (counter_p[14]),
+            .I1 (counter_p[13]),
+            .I2 (counter_p[11]),
+            .I3 (counter_p[12]),
+            .I4 (_N911));
+	// Z = (~I1)|(~I0)|(~I2&~I3)|(~I3&I4) ;
+
+    GTP_LUT4 /* N146_mux16 */ #(
+            .INIT(16'b1010101000101010))
+        N146_mux16 (
+            .Z (_N910),
+            .I0 (_N1353),
+            .I1 (counter_p[16]),
+            .I2 (counter_p[15]),
+            .I3 (_N1571));
+	// Z = (I0&~I2)|(I0&~I1)|(I0&I3) ;
+
+    GTP_MUX2LUT6 N148 (
+            .Z (nt_pwm3),
+            .I0 (_N910),
+            .I1 (_N907),
+            .S (N133));
+	// ../source/rtl/smart_car.v:176
+
+    GTP_LUT5 /* N151_mux10 */ #(
+            .INIT(32'b00000000101111110000000010101111))
+        N151_mux10 (
+            .Z (_N994),
+            .I0 (_N1351),
+            .I1 (counter_p[8]),
+            .I2 (counter_p[12]),
+            .I3 (counter_p[13]),
+            .I4 (_N842));
+	// Z = (~I2&~I3)|(I0&~I3)|(~I1&~I3&I4) ;
+
+    GTP_LUT4 /* N151_mux16 */ #(
+            .INIT(16'b1010101000101010))
+        N151_mux16 (
+            .Z (_N914),
+            .I0 (_N1360),
+            .I1 (counter_p[15]),
+            .I2 (counter_p[14]),
+            .I3 (_N994));
+	// Z = (I0&~I2)|(I0&~I1)|(I0&I3) ;
+
+    GTP_LUT5 /* N161_6 */ #(
+            .INIT(32'b11111010110011110000101011000000))
+        N161_6 (
+            .Z (_N1103),
+            .I0 (_N900),
+            .I1 (_N914),
+            .I2 (nt_p2),
+            .I3 (nt_p3),
+            .I4 (_N910));
+	// Z = (~I2&~I3&I4)|(I1&I2&~I3)|(I0&~I2&I3)|(I2&I3&I4) ;
+
+    GTP_LUT2 /* N162 */ #(
+            .INIT(4'b0110))
+        N162 (
+            .Z (nt_l4),
+            .I0 (nt_a),
+            .I1 (nt_l2));
+	// Z = (I0&~I1)|(~I0&I1) ;
+	// ../source/rtl/smart_car.v:213
+
+    GTP_LUT2 /* N163 */ #(
+            .INIT(4'b1001))
+        N163 (
+            .Z (nt_l3),
+            .I0 (nt_a),
+            .I1 (nt_l2));
+	// Z = (~I0&~I1)|(I0&I1) ;
+
+    GTP_LUT3 /* N165_mux7_1 */ #(
+            .INIT(8'b01111111))
+        N165_mux7_1 (
+            .Z (_N1351),
+            .I0 (counter_p[11]),
+            .I1 (counter_p[10]),
+            .I2 (counter_p[9]));
+	// Z = (~I2)|(~I1)|(~I0) ;
+
+    GTP_LUT5 /* N165_mux9 */ #(
+            .INIT(32'b00010001000100010000000100010001))
+        N165_mux9 (
+            .Z (_N952),
+            .I0 (counter_p[9]),
+            .I1 (counter_p[8]),
+            .I2 (counter_p[6]),
+            .I3 (counter_p[7]),
+            .I4 (_N817));
+	// Z = (~I0&~I1&~I3)|(~I0&~I1&~I2)|(~I0&~I1&I4) ;
+
+    GTP_LUT5 /* N165_mux13_5 */ #(
+            .INIT(32'b01110111111111110111011101111111))
+        N165_mux13_5 (
+            .Z (_N997),
+            .I0 (counter_p[13]),
+            .I1 (counter_p[12]),
+            .I2 (counter_p[10]),
+            .I3 (counter_p[11]),
+            .I4 (_N952));
+	// Z = (~I1)|(~I0)|(~I2&~I3)|(~I3&I4) ;
+
+    GTP_LUT3 /* N165_mux17_3 */ #(
+            .INIT(8'b00000001))
+        N165_mux17_3 (
+            .Z (_N1353),
+            .I0 (counter_p[18]),
+            .I1 (counter_p[17]),
+            .I2 (counter_p[19]));
+	// Z = ~I0&~I1&~I2 ;
+
+    GTP_LUT5 /* N165_mux17_9 */ #(
+            .INIT(32'b00000000000000010000000000000000))
+        N165_mux17_9 (
+            .Z (_N1056),
+            .I0 (counter_p[17]),
+            .I1 (counter_p[16]),
+            .I2 (counter_p[14]),
+            .I3 (counter_p[15]),
+            .I4 (_N997));
+	// Z = ~I0&~I1&~I2&~I3&I4 ;
+
+    GTP_LUT5 /* N170_mux4_7 */ #(
+            .INIT(32'b01111111111111111111111111111111))
+        N170_mux4_7 (
+            .Z (_N865),
+            .I0 (counter_t[4]),
+            .I1 (counter_t[3]),
+            .I2 (counter_t[1]),
+            .I3 (counter_t[2]),
+            .I4 (counter_t[0]));
+	// Z = (~I4)|(~I3)|(~I2)|(~I1)|(~I0) ;
+
+    GTP_LUT2 /* N170_mux9_2 */ #(
+            .INIT(4'b0111))
+        N170_mux9_2 (
+            .Z (_N1555),
+            .I0 (counter_t[8]),
+            .I1 (counter_t[9]));
+	// Z = (~I1)|(~I0) ;
+
+    GTP_LUT5 /* N170_mux9_4 */ #(
+            .INIT(32'b10101011101110111010101010111011))
+        N170_mux9_4 (
+            .Z (_N843),
+            .I0 (_N1555),
+            .I1 (counter_t[7]),
+            .I2 (counter_t[5]),
+            .I3 (counter_t[6]),
+            .I4 (_N865));
+	// Z = (I0)|(~I1&~I3)|(~I1&~I2&I4) ;
+
+    GTP_LUT4 /* N170_mux12 */ #(
+            .INIT(16'b0000000100000000))
+        N170_mux12 (
+            .Z (_N1057),
+            .I0 (counter_t[12]),
+            .I1 (counter_t[11]),
+            .I2 (counter_t[10]),
+            .I3 (_N843));
+	// Z = ~I0&~I1&~I2&I3 ;
+
+    GTP_LUT3 /* N170_mux12_3 */ #(
+            .INIT(8'b00000001))
+        N170_mux12_3 (
+            .Z (_N1359),
+            .I0 (counter_t[11]),
+            .I1 (counter_t[10]),
+            .I2 (counter_t[12]));
+	// Z = ~I0&~I1&~I2 ;
+
+    GTP_LUT5 /* N170_mux20_7 */ #(
+            .INIT(32'b00000000000000000001010101010101))
+        N170_mux20_7 (
+            .Z (_N1618),
+            .I0 (counter_t[16]),
+            .I1 (counter_t[15]),
+            .I2 (counter_t[13]),
+            .I3 (counter_t[14]),
+            .I4 (counter_t[19]));
+	// Z = (~I0&~I3&~I4)|(~I0&~I2&~I4)|(~I0&~I1&~I4) ;
+
+    GTP_LUT5 /* N170_mux20_9 */ #(
+            .INIT(32'b11111111111111110101011101110111))
+        N170_mux20_9 (
+            .Z (_N1620),
+            .I0 (counter_t[20]),
+            .I1 (counter_t[19]),
+            .I2 (counter_t[17]),
+            .I3 (counter_t[18]),
+            .I4 (_N1618));
+	// Z = (~I0)|(I4)|(~I1&~I3)|(~I1&~I2) ;
+
+    GTP_LUT5 /* N170_mux20_10 */ #(
+            .INIT(32'b10101010101011101010101010101010))
+        N170_mux20_10 (
+            .Z (_N847),
+            .I0 (_N1620),
+            .I1 (_N1359),
+            .I2 (counter_t[16]),
+            .I3 (counter_t[19]),
+            .I4 (_N843));
+	// Z = (I0)|(I1&~I2&~I3&I4) ;
+
+    GTP_LUT5CARRY /* N172_0 */ #(
+            .INIT(32'b00001111000011110000000000000000), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N172_0 (
+            .COUT (_N606),
+            .Z (N172[0]),
+            .CIN (),
+            .I0 (),
+            .I1 (),
+            .I2 (counter_t[0]),
+            .I3 (),
+            .I4 (counter_t[0]),
+            .ID ());
+	// ../source/rtl/smart_car.v:242
+
+    GTP_LUT5CARRY /* N172_1 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N172_1 (
+            .COUT (_N607),
+            .Z (N172[1]),
+            .CIN (_N606),
+            .I0 (),
+            .I1 (counter_t[1]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:242
+
+    GTP_LUT5CARRY /* N172_2 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N172_2 (
+            .COUT (_N608),
+            .Z (N172[2]),
+            .CIN (_N607),
+            .I0 (),
+            .I1 (counter_t[2]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:242
+
+    GTP_LUT5CARRY /* N172_3 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N172_3 (
+            .COUT (_N609),
+            .Z (N172[3]),
+            .CIN (_N608),
+            .I0 (),
+            .I1 (counter_t[3]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:242
+
+    GTP_LUT5CARRY /* N172_4 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N172_4 (
+            .COUT (_N610),
+            .Z (N172[4]),
+            .CIN (_N609),
+            .I0 (),
+            .I1 (counter_t[4]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:242
+
+    GTP_LUT5CARRY /* N172_5 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N172_5 (
+            .COUT (_N611),
+            .Z (N172[5]),
+            .CIN (_N610),
+            .I0 (),
+            .I1 (counter_t[5]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:242
+
+    GTP_LUT5CARRY /* N172_6 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N172_6 (
+            .COUT (_N612),
+            .Z (N172[6]),
+            .CIN (_N611),
+            .I0 (),
+            .I1 (counter_t[6]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:242
+
+    GTP_LUT5CARRY /* N172_7 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N172_7 (
+            .COUT (_N613),
+            .Z (N172[7]),
+            .CIN (_N612),
+            .I0 (),
+            .I1 (counter_t[7]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:242
+
+    GTP_LUT5CARRY /* N172_8 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N172_8 (
+            .COUT (_N614),
+            .Z (N172[8]),
+            .CIN (_N613),
+            .I0 (),
+            .I1 (counter_t[8]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:242
+
+    GTP_LUT5CARRY /* N172_9 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N172_9 (
+            .COUT (_N615),
+            .Z (N172[9]),
+            .CIN (_N614),
+            .I0 (),
+            .I1 (counter_t[9]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:242
+
+    GTP_LUT5CARRY /* N172_10 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N172_10 (
+            .COUT (_N616),
+            .Z (N172[10]),
+            .CIN (_N615),
+            .I0 (),
+            .I1 (counter_t[10]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:242
+
+    GTP_LUT5CARRY /* N172_11 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N172_11 (
+            .COUT (_N617),
+            .Z (N172[11]),
+            .CIN (_N616),
+            .I0 (),
+            .I1 (counter_t[11]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:242
+
+    GTP_LUT5CARRY /* N172_12 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N172_12 (
+            .COUT (_N618),
+            .Z (N172[12]),
+            .CIN (_N617),
+            .I0 (),
+            .I1 (counter_t[12]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:242
+
+    GTP_LUT5CARRY /* N172_13 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N172_13 (
+            .COUT (_N619),
+            .Z (N172[13]),
+            .CIN (_N618),
+            .I0 (),
+            .I1 (counter_t[13]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:242
+
+    GTP_LUT5CARRY /* N172_14 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N172_14 (
+            .COUT (_N620),
+            .Z (N172[14]),
+            .CIN (_N619),
+            .I0 (),
+            .I1 (counter_t[14]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:242
+
+    GTP_LUT5CARRY /* N172_15 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N172_15 (
+            .COUT (_N621),
+            .Z (N172[15]),
+            .CIN (_N620),
+            .I0 (),
+            .I1 (counter_t[15]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:242
+
+    GTP_LUT5CARRY /* N172_16 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N172_16 (
+            .COUT (_N622),
+            .Z (N172[16]),
+            .CIN (_N621),
+            .I0 (),
+            .I1 (counter_t[16]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:242
+
+    GTP_LUT5CARRY /* N172_17 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N172_17 (
+            .COUT (_N623),
+            .Z (N172[17]),
+            .CIN (_N622),
+            .I0 (),
+            .I1 (counter_t[17]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:242
+
+    GTP_LUT5CARRY /* N172_18 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N172_18 (
+            .COUT (_N624),
+            .Z (N172[18]),
+            .CIN (_N623),
+            .I0 (),
+            .I1 (counter_t[18]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:242
+
+    GTP_LUT5CARRY /* N172_19 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N172_19 (
+            .COUT (_N625),
+            .Z (N172[19]),
+            .CIN (_N624),
+            .I0 (),
+            .I1 (counter_t[19]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:242
+
+    GTP_LUT5CARRY /* N172_20 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N172_20 (
+            .COUT (),
+            .Z (N172[20]),
+            .CIN (_N625),
+            .I0 (),
+            .I1 (counter_t[20]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:242
+
+    GTP_LUT4 /* N177_mux3 */ #(
+            .INIT(16'b0111011101111111))
+        N177_mux3 (
+            .Z (_N991),
+            .I0 (counter_t[3]),
+            .I1 (counter_t[2]),
+            .I2 (counter_t[1]),
+            .I3 (counter_t[0]));
+	// Z = (~I1)|(~I0)|(~I2&~I3) ;
+
+    GTP_LUT5 /* N177_mux7_4 */ #(
+            .INIT(32'b01111111111111110111011111111111))
+        N177_mux7_4 (
+            .Z (_N850),
+            .I0 (counter_t[7]),
+            .I1 (counter_t[6]),
+            .I2 (counter_t[4]),
+            .I3 (counter_t[5]),
+            .I4 (_N991));
+	// Z = (~I3)|(~I1)|(~I0)|(~I2&I4) ;
+
+    GTP_LUT4 /* N177_mux20_16 */ #(
+            .INIT(16'b0000000000000001))
+        N177_mux20_16 (
+            .Z (_N1595),
+            .I0 (counter_t[15]),
+            .I1 (counter_t[14]),
+            .I2 (counter_t[13]),
+            .I3 (counter_t[17]));
+	// Z = ~I0&~I1&~I2&~I3 ;
+
+    GTP_LUT5 /* N177_mux20_17 */ #(
+            .INIT(32'b00000000000000010000000000000000))
+        N177_mux20_17 (
+            .Z (_N1596),
+            .I0 (counter_t[20]),
+            .I1 (counter_t[19]),
+            .I2 (counter_t[16]),
+            .I3 (counter_t[18]),
+            .I4 (_N1359));
+	// Z = ~I0&~I1&~I2&~I3&I4 ;
+
+    GTP_LUT5 /* N177_mux20_19 */ #(
+            .INIT(32'b00001000100010000000000010001000))
+        N177_mux20_19 (
+            .Z (_N924),
+            .I0 (_N1596),
+            .I1 (_N1595),
+            .I2 (counter_t[8]),
+            .I3 (counter_t[9]),
+            .I4 (_N850));
+	// Z = (I0&I1&~I3)|(I0&I1&~I2&I4) ;
+
+    GTP_LUT5CARRY /* N193_0 */ #(
+            .INIT(32'b00001111000011110000000000000000), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N193_0 (
+            .COUT (_N669),
+            .Z (N193[0]),
+            .CIN (),
+            .I0 (),
+            .I1 (),
+            .I2 (counter_e_a[0]),
+            .I3 (),
+            .I4 (counter_e_a[0]),
+            .ID ());
+	// ../source/rtl/smart_car.v:296
+
+    GTP_LUT5CARRY /* N193_1 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N193_1 (
+            .COUT (_N670),
+            .Z (N193[1]),
+            .CIN (_N669),
+            .I0 (),
+            .I1 (counter_e_a[1]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:296
+
+    GTP_LUT5CARRY /* N193_2 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N193_2 (
+            .COUT (_N671),
+            .Z (N193[2]),
+            .CIN (_N670),
+            .I0 (),
+            .I1 (counter_e_a[2]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:296
+
+    GTP_LUT5CARRY /* N193_3 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N193_3 (
+            .COUT (_N672),
+            .Z (N193[3]),
+            .CIN (_N671),
+            .I0 (),
+            .I1 (counter_e_a[3]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:296
+
+    GTP_LUT5CARRY /* N193_4 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N193_4 (
+            .COUT (_N673),
+            .Z (N193[4]),
+            .CIN (_N672),
+            .I0 (),
+            .I1 (counter_e_a[4]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:296
+
+    GTP_LUT5CARRY /* N193_5 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N193_5 (
+            .COUT (_N674),
+            .Z (N193[5]),
+            .CIN (_N673),
+            .I0 (),
+            .I1 (counter_e_a[5]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:296
+
+    GTP_LUT5CARRY /* N193_6 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N193_6 (
+            .COUT (_N675),
+            .Z (N193[6]),
+            .CIN (_N674),
+            .I0 (),
+            .I1 (counter_e_a[6]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:296
+
+    GTP_LUT5CARRY /* N193_7 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N193_7 (
+            .COUT (_N676),
+            .Z (N193[7]),
+            .CIN (_N675),
+            .I0 (),
+            .I1 (counter_e_a[7]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:296
+
+    GTP_LUT5CARRY /* N193_8 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N193_8 (
+            .COUT (_N677),
+            .Z (N193[8]),
+            .CIN (_N676),
+            .I0 (),
+            .I1 (counter_e_a[8]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:296
+
+    GTP_LUT5CARRY /* N193_9 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N193_9 (
+            .COUT (_N678),
+            .Z (N193[9]),
+            .CIN (_N677),
+            .I0 (),
+            .I1 (counter_e_a[9]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:296
+
+    GTP_LUT5CARRY /* N193_10 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N193_10 (
+            .COUT (_N679),
+            .Z (N193[10]),
+            .CIN (_N678),
+            .I0 (),
+            .I1 (counter_e_a[10]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:296
+
+    GTP_LUT5CARRY /* N193_11 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N193_11 (
+            .COUT (_N680),
+            .Z (N193[11]),
+            .CIN (_N679),
+            .I0 (),
+            .I1 (counter_e_a[11]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:296
+
+    GTP_LUT5CARRY /* N193_12 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N193_12 (
+            .COUT (_N681),
+            .Z (N193[12]),
+            .CIN (_N680),
+            .I0 (),
+            .I1 (counter_e_a[12]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:296
+
+    GTP_LUT5CARRY /* N193_13 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N193_13 (
+            .COUT (_N682),
+            .Z (N193[13]),
+            .CIN (_N681),
+            .I0 (),
+            .I1 (counter_e_a[13]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:296
+
+    GTP_LUT5CARRY /* N193_14 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N193_14 (
+            .COUT (_N683),
+            .Z (N193[14]),
+            .CIN (_N682),
+            .I0 (),
+            .I1 (counter_e_a[14]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:296
+
+    GTP_LUT5CARRY /* N193_15 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N193_15 (
+            .COUT (_N684),
+            .Z (N193[15]),
+            .CIN (_N683),
+            .I0 (),
+            .I1 (counter_e_a[15]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:296
+
+    GTP_LUT5CARRY /* N193_16 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N193_16 (
+            .COUT (_N685),
+            .Z (N193[16]),
+            .CIN (_N684),
+            .I0 (),
+            .I1 (counter_e_a[16]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:296
+
+    GTP_LUT5CARRY /* N193_17 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N193_17 (
+            .COUT (_N686),
+            .Z (N193[17]),
+            .CIN (_N685),
+            .I0 (),
+            .I1 (counter_e_a[17]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:296
+
+    GTP_LUT5CARRY /* N193_18 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N193_18 (
+            .COUT (_N687),
+            .Z (N193[18]),
+            .CIN (_N686),
+            .I0 (),
+            .I1 (counter_e_a[18]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:296
+
+    GTP_LUT5CARRY /* N193_19 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N193_19 (
+            .COUT (_N688),
+            .Z (N193[19]),
+            .CIN (_N687),
+            .I0 (),
+            .I1 (counter_e_a[19]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:296
+
+    GTP_LUT5CARRY /* N193_20 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N193_20 (
+            .COUT (),
+            .Z (N193[20]),
+            .CIN (_N688),
+            .I0 (),
+            .I1 (counter_e_a[20]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:296
+
+    GTP_INV N223_0_vname (
+            .Z (N223_0),
+            .I (nt_echo_en_n));
+    // defparam N223_0_vname.orig_name = N223_0;
+
+    GTP_LUT5 /* N225_mux4 */ #(
+            .INIT(32'b00010101010101011111111111111111))
+        N225_mux4 (
+            .Z (_N823),
+            .I0 (dis_reg_a[3]),
+            .I1 (dis_reg_a[2]),
+            .I2 (dis_reg_a[0]),
+            .I3 (dis_reg_a[1]),
+            .I4 (dis_reg_a[4]));
+	// Z = (~I4)|(~I0&~I3)|(~I0&~I2)|(~I0&~I1) ;
+
+    GTP_LUT4 /* N225_mux9_4 */ #(
+            .INIT(16'b0111111111111111))
+        N225_mux9_4 (
+            .Z (_N1522),
+            .I0 (dis_reg_a[8]),
+            .I1 (dis_reg_a[7]),
+            .I2 (dis_reg_a[6]),
+            .I3 (dis_reg_a[9]));
+	// Z = (~I3)|(~I2)|(~I1)|(~I0) ;
+
+    GTP_LUT5 /* N225_mux11_3 */ #(
+            .INIT(32'b00000000000010110000000000001010))
+        N225_mux11_3 (
+            .Z (_N913),
+            .I0 (_N1522),
+            .I1 (dis_reg_a[5]),
+            .I2 (dis_reg_a[10]),
+            .I3 (dis_reg_a[11]),
+            .I4 (_N823));
+	// Z = (I0&~I2&~I3)|(~I1&~I2&~I3&I4) ;
+
+    GTP_LUT5 /* N225_mux15_4 */ #(
+            .INIT(32'b00010001010101010001000100010101))
+        N225_mux15_4 (
+            .Z (_N1010),
+            .I0 (dis_reg_a[15]),
+            .I1 (dis_reg_a[14]),
+            .I2 (dis_reg_a[12]),
+            .I3 (dis_reg_a[13]),
+            .I4 (_N913));
+	// Z = (~I0&~I1)|(~I0&~I2&~I3)|(~I0&~I3&I4) ;
+
+    GTP_LUT4 /* N225_mux20_4 */ #(
+            .INIT(16'b0000000000000001))
+        N225_mux20_4 (
+            .Z (_N1565),
+            .I0 (dis_reg_a[19]),
+            .I1 (dis_reg_a[18]),
+            .I2 (dis_reg_a[17]),
+            .I3 (dis_reg_a[20]));
+	// Z = ~I0&~I1&~I2&~I3 ;
+
+    GTP_MUX2LUT6 N225_mux20_6 (
+            .Z (_N926),
+            .I0 (_N1635),
+            .I1 (_N1565),
+            .S (_N1010));
+
+    GTP_LUT5 /* N225_mux20_7 */ #(
+            .INIT(32'b00000000000000000000000000000001))
+        N225_mux20_7 (
+            .Z (_N1635),
+            .I0 (dis_reg_a[19]),
+            .I1 (dis_reg_a[18]),
+            .I2 (dis_reg_a[16]),
+            .I3 (dis_reg_a[17]),
+            .I4 (dis_reg_a[20]));
+	// Z = ~I0&~I1&~I2&~I3&~I4 ;
+
+    GTP_LUT5CARRY /* N243_0 */ #(
+            .INIT(32'b00001111000011110000000000000000), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N243_0 (
+            .COUT (_N732),
+            .Z (N243[0]),
+            .CIN (),
+            .I0 (),
+            .I1 (),
+            .I2 (counter_e_b[0]),
+            .I3 (),
+            .I4 (counter_e_b[0]),
+            .ID ());
+	// ../source/rtl/smart_car.v:367
+
+    GTP_LUT5CARRY /* N243_1 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N243_1 (
+            .COUT (_N733),
+            .Z (N243[1]),
+            .CIN (_N732),
+            .I0 (),
+            .I1 (counter_e_b[1]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:367
+
+    GTP_LUT5CARRY /* N243_2 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N243_2 (
+            .COUT (_N734),
+            .Z (N243[2]),
+            .CIN (_N733),
+            .I0 (),
+            .I1 (counter_e_b[2]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:367
+
+    GTP_LUT5CARRY /* N243_3 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N243_3 (
+            .COUT (_N735),
+            .Z (N243[3]),
+            .CIN (_N734),
+            .I0 (),
+            .I1 (counter_e_b[3]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:367
+
+    GTP_LUT5CARRY /* N243_4 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N243_4 (
+            .COUT (_N736),
+            .Z (N243[4]),
+            .CIN (_N735),
+            .I0 (),
+            .I1 (counter_e_b[4]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:367
+
+    GTP_LUT5CARRY /* N243_5 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N243_5 (
+            .COUT (_N737),
+            .Z (N243[5]),
+            .CIN (_N736),
+            .I0 (),
+            .I1 (counter_e_b[5]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:367
+
+    GTP_LUT5CARRY /* N243_6 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N243_6 (
+            .COUT (_N738),
+            .Z (N243[6]),
+            .CIN (_N737),
+            .I0 (),
+            .I1 (counter_e_b[6]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:367
+
+    GTP_LUT5CARRY /* N243_7 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N243_7 (
+            .COUT (_N739),
+            .Z (N243[7]),
+            .CIN (_N738),
+            .I0 (),
+            .I1 (counter_e_b[7]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:367
+
+    GTP_LUT5CARRY /* N243_8 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N243_8 (
+            .COUT (_N740),
+            .Z (N243[8]),
+            .CIN (_N739),
+            .I0 (),
+            .I1 (counter_e_b[8]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:367
+
+    GTP_LUT5CARRY /* N243_9 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N243_9 (
+            .COUT (_N741),
+            .Z (N243[9]),
+            .CIN (_N740),
+            .I0 (),
+            .I1 (counter_e_b[9]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:367
+
+    GTP_LUT5CARRY /* N243_10 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N243_10 (
+            .COUT (_N742),
+            .Z (N243[10]),
+            .CIN (_N741),
+            .I0 (),
+            .I1 (counter_e_b[10]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:367
+
+    GTP_LUT5CARRY /* N243_11 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N243_11 (
+            .COUT (_N743),
+            .Z (N243[11]),
+            .CIN (_N742),
+            .I0 (),
+            .I1 (counter_e_b[11]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:367
+
+    GTP_LUT5CARRY /* N243_12 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N243_12 (
+            .COUT (_N744),
+            .Z (N243[12]),
+            .CIN (_N743),
+            .I0 (),
+            .I1 (counter_e_b[12]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:367
+
+    GTP_LUT5CARRY /* N243_13 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N243_13 (
+            .COUT (_N745),
+            .Z (N243[13]),
+            .CIN (_N744),
+            .I0 (),
+            .I1 (counter_e_b[13]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:367
+
+    GTP_LUT5CARRY /* N243_14 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N243_14 (
+            .COUT (_N746),
+            .Z (N243[14]),
+            .CIN (_N745),
+            .I0 (),
+            .I1 (counter_e_b[14]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:367
+
+    GTP_LUT5CARRY /* N243_15 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N243_15 (
+            .COUT (_N747),
+            .Z (N243[15]),
+            .CIN (_N746),
+            .I0 (),
+            .I1 (counter_e_b[15]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:367
+
+    GTP_LUT5CARRY /* N243_16 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N243_16 (
+            .COUT (_N748),
+            .Z (N243[16]),
+            .CIN (_N747),
+            .I0 (),
+            .I1 (counter_e_b[16]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:367
+
+    GTP_LUT5CARRY /* N243_17 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N243_17 (
+            .COUT (_N749),
+            .Z (N243[17]),
+            .CIN (_N748),
+            .I0 (),
+            .I1 (counter_e_b[17]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:367
+
+    GTP_LUT5CARRY /* N243_18 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N243_18 (
+            .COUT (_N750),
+            .Z (N243[18]),
+            .CIN (_N749),
+            .I0 (),
+            .I1 (counter_e_b[18]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:367
+
+    GTP_LUT5CARRY /* N243_19 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N243_19 (
+            .COUT (_N751),
+            .Z (N243[19]),
+            .CIN (_N750),
+            .I0 (),
+            .I1 (counter_e_b[19]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:367
+
+    GTP_LUT5CARRY /* N243_20 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N243_20 (
+            .COUT (),
+            .Z (N243[20]),
+            .CIN (_N751),
+            .I0 (),
+            .I1 (counter_e_b[20]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// ../source/rtl/smart_car.v:367
+
+    GTP_LUT5 /* N274_mux4 */ #(
+            .INIT(32'b00010101010101011111111111111111))
+        N274_mux4 (
+            .Z (_N810),
+            .I0 (dis_reg_b[3]),
+            .I1 (dis_reg_b[2]),
+            .I2 (dis_reg_b[0]),
+            .I3 (dis_reg_b[1]),
+            .I4 (dis_reg_b[4]));
+	// Z = (~I4)|(~I0&~I3)|(~I0&~I2)|(~I0&~I1) ;
+
+    GTP_LUT4 /* N274_mux9_4 */ #(
+            .INIT(16'b0111111111111111))
+        N274_mux9_4 (
+            .Z (_N1538),
+            .I0 (dis_reg_b[8]),
+            .I1 (dis_reg_b[7]),
+            .I2 (dis_reg_b[6]),
+            .I3 (dis_reg_b[9]));
+	// Z = (~I3)|(~I2)|(~I1)|(~I0) ;
+
+    GTP_LUT5 /* N274_mux11_3 */ #(
+            .INIT(32'b00000000000010110000000000001010))
+        N274_mux11_3 (
+            .Z (_N906),
+            .I0 (_N1538),
+            .I1 (dis_reg_b[5]),
+            .I2 (dis_reg_b[10]),
+            .I3 (dis_reg_b[11]),
+            .I4 (_N810));
+	// Z = (I0&~I2&~I3)|(~I1&~I2&~I3&I4) ;
+
+    GTP_LUT5 /* N274_mux15_4 */ #(
+            .INIT(32'b00010001010101010001000100010101))
+        N274_mux15_4 (
+            .Z (_N1015),
+            .I0 (dis_reg_b[15]),
+            .I1 (dis_reg_b[14]),
+            .I2 (dis_reg_b[12]),
+            .I3 (dis_reg_b[13]),
+            .I4 (_N906));
+	// Z = (~I0&~I1)|(~I0&~I2&~I3)|(~I0&~I3&I4) ;
+
+    GTP_LUT4 /* N274_mux20_4 */ #(
+            .INIT(16'b0000000000000001))
+        N274_mux20_4 (
+            .Z (_N1561),
+            .I0 (dis_reg_b[19]),
+            .I1 (dis_reg_b[18]),
+            .I2 (dis_reg_b[17]),
+            .I3 (dis_reg_b[20]));
+	// Z = ~I0&~I1&~I2&~I3 ;
+
+    GTP_MUX2LUT6 N274_mux20_6 (
+            .Z (_N928),
+            .I0 (_N1631),
+            .I1 (_N1561),
+            .S (_N1015));
+
+    GTP_LUT5 /* N274_mux20_7 */ #(
+            .INIT(32'b00000000000000000000000000000001))
+        N274_mux20_7 (
+            .Z (_N1631),
+            .I0 (dis_reg_b[19]),
+            .I1 (dis_reg_b[18]),
+            .I2 (dis_reg_b[16]),
+            .I3 (dis_reg_b[17]),
+            .I4 (dis_reg_b[20]));
+	// Z = ~I0&~I1&~I2&~I3&~I4 ;
+
+    GTP_LUT2 /* N283 */ #(
+            .INIT(4'b0001))
+        N283_vname (
+            .Z (N283),
+            .I0 (curr_state_a[1]),
+            .I1 (curr_state_a[0]));
+    // defparam N283_vname.orig_name = N283;
+	// Z = ~I0&~I1 ;
+	// ../source/rtl/smart_car.v:285
+
+    GTP_LUT2 /* N284 */ #(
+            .INIT(4'b0100))
+        N284_vname (
+            .Z (N284),
+            .I0 (curr_state_a[1]),
+            .I1 (curr_state_a[0]));
+    // defparam N284_vname.orig_name = N284;
+	// Z = ~I0&I1 ;
+	// ../source/rtl/smart_car.v:291
+
+    GTP_LUT2 /* N285 */ #(
+            .INIT(4'b0010))
+        N285_vname (
+            .Z (N285),
+            .I0 (curr_state_a[1]),
+            .I1 (curr_state_a[0]));
+    // defparam N285_vname.orig_name = N285;
+	// Z = I0&~I1 ;
+	// ../source/rtl/smart_car.v:299
+
+    GTP_LUT2 /* N288 */ #(
+            .INIT(4'b0001))
+        N288_vname (
+            .Z (N288),
+            .I0 (curr_state_b[1]),
+            .I1 (curr_state_b[0]));
+    // defparam N288_vname.orig_name = N288;
+	// Z = ~I0&~I1 ;
+	// ../source/rtl/smart_car.v:356
+
+    GTP_LUT2 /* N289 */ #(
+            .INIT(4'b0100))
+        N289_vname (
+            .Z (N289),
+            .I0 (curr_state_b[1]),
+            .I1 (curr_state_b[0]));
+    // defparam N289_vname.orig_name = N289;
+	// Z = ~I0&I1 ;
+	// ../source/rtl/smart_car.v:362
+
+    GTP_LUT2 /* N290 */ #(
+            .INIT(4'b0010))
+        N290_vname (
+            .Z (N290),
+            .I0 (curr_state_b[1]),
+            .I1 (curr_state_b[0]));
+    // defparam N290_vname.orig_name = N290;
+	// Z = I0&~I1 ;
+	// ../source/rtl/smart_car.v:370
+
+    GTP_LUT5 /* N300_5 */ #(
+            .INIT(32'b00000000000000100000000000000000))
+        N300_5 (
+            .Z (N300),
+            .I0 (i[4]),
+            .I1 (i[2]),
+            .I2 (i[0]),
+            .I3 (i[1]),
+            .I4 (i[3]));
+	// Z = I0&~I1&~I2&~I3&I4 ;
+
+    GTP_LUT5 /* \N334[0]  */ #(
+            .INIT(32'b10111111111111110000000000000000))
+        \N334[0]  (
+            .Z (_N1172),
+            .I0 (_N895),
+            .I1 (counter_rgb[5]),
+            .I2 (counter_rgb[3]),
+            .I3 (counter_rgb[4]),
+            .I4 (N5[0]));
+	// Z = (~I3&I4)|(~I2&I4)|(~I1&I4)|(I0&I4) ;
+
+    GTP_LUT5 /* \N334[1]  */ #(
+            .INIT(32'b10111111111111110000000000000000))
+        \N334[1]  (
+            .Z (_N1173),
+            .I0 (_N895),
+            .I1 (counter_rgb[5]),
+            .I2 (counter_rgb[3]),
+            .I3 (counter_rgb[4]),
+            .I4 (N5[1]));
+	// Z = (~I3&I4)|(~I2&I4)|(~I1&I4)|(I0&I4) ;
+
+    GTP_LUT5 /* \N334[2]  */ #(
+            .INIT(32'b10111111111111110000000000000000))
+        \N334[2]  (
+            .Z (_N1174),
+            .I0 (_N895),
+            .I1 (counter_rgb[5]),
+            .I2 (counter_rgb[3]),
+            .I3 (counter_rgb[4]),
+            .I4 (N5[2]));
+	// Z = (~I3&I4)|(~I2&I4)|(~I1&I4)|(I0&I4) ;
+
+    GTP_LUT5 /* \N334[3]  */ #(
+            .INIT(32'b10111111111111110000000000000000))
+        \N334[3]  (
+            .Z (_N1175),
+            .I0 (_N895),
+            .I1 (counter_rgb[5]),
+            .I2 (counter_rgb[3]),
+            .I3 (counter_rgb[4]),
+            .I4 (N5[3]));
+	// Z = (~I3&I4)|(~I2&I4)|(~I1&I4)|(I0&I4) ;
+
+    GTP_LUT5 /* \N334[4]  */ #(
+            .INIT(32'b10111111111111110000000000000000))
+        \N334[4]  (
+            .Z (_N1176),
+            .I0 (_N895),
+            .I1 (counter_rgb[5]),
+            .I2 (counter_rgb[3]),
+            .I3 (counter_rgb[4]),
+            .I4 (N5[4]));
+	// Z = (~I3&I4)|(~I2&I4)|(~I1&I4)|(I0&I4) ;
+
+    GTP_LUT5 /* \N334[5]  */ #(
+            .INIT(32'b10111111111111110000000000000000))
+        \N334[5]  (
+            .Z (_N1177),
+            .I0 (_N895),
+            .I1 (counter_rgb[5]),
+            .I2 (counter_rgb[3]),
+            .I3 (counter_rgb[4]),
+            .I4 (N5[5]));
+	// Z = (~I3&I4)|(~I2&I4)|(~I1&I4)|(I0&I4) ;
+
+    GTP_LUT5 /* N342inv */ #(
+            .INIT(32'b00000001000000000011000100110101))
+        N342inv (
+            .Z (N342_inv),
+            .I0 (state_rgb_1),
+            .I1 (state_rgb_0),
+            .I2 (nt_echo_en_n),
+            .I3 (N32),
+            .I4 (state_rgb_2));
+	// Z = (~I1&I2&~I4)|(~I0&~I2&~I3&~I4)|(~I0&~I1&~I2&I3) ;
+
+    GTP_LUT2 /* \N356_2[0]  */ #(
+            .INIT(4'b1000))
+        \N356_2[0]  (
+            .Z (_N1178),
+            .I0 (N20[0]),
+            .I1 (N342_inv));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N356_2[1]  */ #(
+            .INIT(4'b1000))
+        \N356_2[1]  (
+            .Z (_N1179),
+            .I0 (N20[1]),
+            .I1 (N342_inv));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N356_2[2]  */ #(
+            .INIT(4'b1000))
+        \N356_2[2]  (
+            .Z (_N1180),
+            .I0 (N20[2]),
+            .I1 (N342_inv));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N356_2[3]  */ #(
+            .INIT(4'b1000))
+        \N356_2[3]  (
+            .Z (_N1181),
+            .I0 (N342_inv),
+            .I1 (N20[3]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N356_2[4]  */ #(
+            .INIT(4'b1000))
+        \N356_2[4]  (
+            .Z (_N1182),
+            .I0 (N342_inv),
+            .I1 (N20[4]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N356_2[5]  */ #(
+            .INIT(4'b1000))
+        \N356_2[5]  (
+            .Z (_N1183),
+            .I0 (N342_inv),
+            .I1 (N20[5]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N356_2[6]  */ #(
+            .INIT(4'b1000))
+        \N356_2[6]  (
+            .Z (_N1184),
+            .I0 (N342_inv),
+            .I1 (N20[6]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N356_2[7]  */ #(
+            .INIT(4'b1000))
+        \N356_2[7]  (
+            .Z (_N1185),
+            .I0 (N342_inv),
+            .I1 (N20[7]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N356_2[8]  */ #(
+            .INIT(4'b1000))
+        \N356_2[8]  (
+            .Z (_N1186),
+            .I0 (N342_inv),
+            .I1 (N20[8]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N356_2[9]  */ #(
+            .INIT(4'b1000))
+        \N356_2[9]  (
+            .Z (_N1187),
+            .I0 (N342_inv),
+            .I1 (N20[9]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N356_2[10]  */ #(
+            .INIT(4'b1000))
+        \N356_2[10]  (
+            .Z (_N1188),
+            .I0 (N342_inv),
+            .I1 (N20[10]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N356_2[11]  */ #(
+            .INIT(4'b1000))
+        \N356_2[11]  (
+            .Z (_N1189),
+            .I0 (N342_inv),
+            .I1 (N20[11]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N356_2[12]  */ #(
+            .INIT(4'b1000))
+        \N356_2[12]  (
+            .Z (_N1190),
+            .I0 (N342_inv),
+            .I1 (N20[12]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N356_2[13]  */ #(
+            .INIT(4'b1000))
+        \N356_2[13]  (
+            .Z (_N1191),
+            .I0 (N342_inv),
+            .I1 (N20[13]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N356_2[14]  */ #(
+            .INIT(4'b1000))
+        \N356_2[14]  (
+            .Z (_N1192),
+            .I0 (N342_inv),
+            .I1 (N20[14]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N356_2[15]  */ #(
+            .INIT(4'b1000))
+        \N356_2[15]  (
+            .Z (_N1193),
+            .I0 (N342_inv),
+            .I1 (N20[15]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N356_2[16]  */ #(
+            .INIT(4'b1000))
+        \N356_2[16]  (
+            .Z (_N1194),
+            .I0 (N342_inv),
+            .I1 (N20[16]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N356_2[17]  */ #(
+            .INIT(4'b1000))
+        \N356_2[17]  (
+            .Z (_N1195),
+            .I0 (N342_inv),
+            .I1 (N20[17]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N356_2[18]  */ #(
+            .INIT(4'b1000))
+        \N356_2[18]  (
+            .Z (_N1196),
+            .I0 (N342_inv),
+            .I1 (N20[18]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N356_2[19]  */ #(
+            .INIT(4'b1000))
+        \N356_2[19]  (
+            .Z (_N1197),
+            .I0 (N342_inv),
+            .I1 (N20[19]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N356_2[20]  */ #(
+            .INIT(4'b1000))
+        \N356_2[20]  (
+            .Z (_N1198),
+            .I0 (N342_inv),
+            .I1 (N20[20]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N356_2[21]  */ #(
+            .INIT(4'b1000))
+        \N356_2[21]  (
+            .Z (_N1199),
+            .I0 (N342_inv),
+            .I1 (N20[21]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N356_2[22]  */ #(
+            .INIT(4'b1000))
+        \N356_2[22]  (
+            .Z (_N1200),
+            .I0 (N342_inv),
+            .I1 (N20[22]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N356_2[23]  */ #(
+            .INIT(4'b1000))
+        \N356_2[23]  (
+            .Z (_N1201),
+            .I0 (N342_inv),
+            .I1 (N20[23]));
+	// Z = I0&I1 ;
+
+    GTP_LUT5 /* N357_2_3 */ #(
+            .INIT(32'b10101111101011001011000110111101))
+        N357_2_3 (
+            .Z (_N1314),
+            .I0 (state_rgb_1),
+            .I1 (state_rgb_0),
+            .I2 (nt_echo_en_n),
+            .I3 (N32),
+            .I4 (state_rgb_2));
+	// Z = (I0&I2)|(~I0&~I1&~I4)|(I1&~I2&~I3)|(~I2&I3&I4) ;
+
+    GTP_LUT3 /* N357_9 */ #(
+            .INIT(8'b11101010))
+        N357_9 (
+            .Z (N357),
+            .I0 (_N1366),
+            .I1 (_N1314),
+            .I2 (N18));
+	// Z = (I0)|(I1&I2) ;
+
+    GTP_LUT5 /* N357_11 */ #(
+            .INIT(32'b11111110111111111100111011001010))
+        N357_11 (
+            .Z (_N1366),
+            .I0 (state_rgb_1),
+            .I1 (state_rgb_0),
+            .I2 (nt_echo_en_n),
+            .I3 (N32),
+            .I4 (state_rgb_2));
+	// Z = (~I3&I4)|(I0&~I2)|(I1&I2)|(I1&I3)|(I2&I4) ;
+
+    GTP_LUT5 /* N361 */ #(
+            .INIT(32'b11111111111111111111111100100000))
+        N361_vname (
+            .Z (N361),
+            .I0 (_N1545),
+            .I1 (_N1423),
+            .I2 (_N1544),
+            .I3 (N300),
+            .I4 (N18));
+    // defparam N361_vname.orig_name = N361;
+	// Z = (I3)|(I4)|(I0&~I1&I2) ;
+	// ../source/rtl/smart_car.v:45
+
+    GTP_LUT5 /* \N362[0]  */ #(
+            .INIT(32'b00000000000000000100010101010101))
+        \N362[0]  (
+            .Z (_N1202),
+            .I0 (N300),
+            .I1 (_N1423),
+            .I2 (_N1544),
+            .I3 (_N1545),
+            .I4 (i[0]));
+	// Z = (~I0&~I3&~I4)|(~I0&~I2&~I4)|(~I0&I1&~I4) ;
+
+    GTP_LUT3 /* \N362[1]  */ #(
+            .INIT(8'b01100000))
+        \N362[1]  (
+            .Z (_N1203),
+            .I0 (i[1]),
+            .I1 (i[0]),
+            .I2 (N87_inv));
+	// Z = (I0&~I1&I2)|(~I0&I1&I2) ;
+
+    GTP_LUT4 /* \N362[2]  */ #(
+            .INIT(16'b0110101000000000))
+        \N362[2]  (
+            .Z (_N1204),
+            .I0 (i[2]),
+            .I1 (i[1]),
+            .I2 (i[0]),
+            .I3 (N87_inv));
+	// Z = (I0&~I2&I3)|(I0&~I1&I3)|(~I0&I1&I2&I3) ;
+
+    GTP_LUT5 /* \N362[3]  */ #(
+            .INIT(32'b01101010101010100000000000000000))
+        \N362[3]  (
+            .Z (_N1205),
+            .I0 (i[3]),
+            .I1 (i[2]),
+            .I2 (i[0]),
+            .I3 (i[1]),
+            .I4 (N87_inv));
+	// Z = (I0&~I3&I4)|(I0&~I2&I4)|(I0&~I1&I4)|(~I0&I1&I2&I3&I4) ;
+
+    GTP_LUT4 /* \N362[4]  */ #(
+            .INIT(16'b0111100000000000))
+        \N362[4]  (
+            .Z (_N1206),
+            .I0 (_N22),
+            .I1 (i[3]),
+            .I2 (i[4]),
+            .I3 (N87_inv));
+	// Z = (~I1&I2&I3)|(~I0&I2&I3)|(I0&I1&~I2&I3) ;
+
+    GTP_LUT5 /* N367 */ #(
+            .INIT(32'b11111111000000001110110000000000))
+        N367_vname (
+            .Z (N367),
+            .I0 (state_rgb_1),
+            .I1 (state_rgb_0),
+            .I2 (nt_echo_en_n),
+            .I3 (nt_sys_rst_n),
+            .I4 (state_rgb_2));
+    // defparam N367_vname.orig_name = N367;
+	// Z = (I1&I3)|(I3&I4)|(I0&I2&I3) ;
+
+    GTP_LUT2 /* \N369[0]  */ #(
+            .INIT(4'b1000))
+        \N369[0]  (
+            .Z (_N1208),
+            .I0 (N119[0]),
+            .I1 (_N975));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N369[1]  */ #(
+            .INIT(4'b1000))
+        \N369[1]  (
+            .Z (_N1209),
+            .I0 (N119[1]),
+            .I1 (_N975));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N369[2]  */ #(
+            .INIT(4'b1000))
+        \N369[2]  (
+            .Z (_N1210),
+            .I0 (N119[2]),
+            .I1 (_N975));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N369[3]  */ #(
+            .INIT(4'b1000))
+        \N369[3]  (
+            .Z (_N1211),
+            .I0 (N119[3]),
+            .I1 (_N975));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N369[4]  */ #(
+            .INIT(4'b1000))
+        \N369[4]  (
+            .Z (_N1212),
+            .I0 (N119[4]),
+            .I1 (_N975));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N369[5]  */ #(
+            .INIT(4'b1000))
+        \N369[5]  (
+            .Z (_N1213),
+            .I0 (N119[5]),
+            .I1 (_N975));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N369[6]  */ #(
+            .INIT(4'b1000))
+        \N369[6]  (
+            .Z (_N1214),
+            .I0 (N119[6]),
+            .I1 (_N975));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N369[7]  */ #(
+            .INIT(4'b1000))
+        \N369[7]  (
+            .Z (_N1215),
+            .I0 (N119[7]),
+            .I1 (_N975));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N369[8]  */ #(
+            .INIT(4'b1000))
+        \N369[8]  (
+            .Z (_N1216),
+            .I0 (N119[8]),
+            .I1 (_N975));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N369[9]  */ #(
+            .INIT(4'b1000))
+        \N369[9]  (
+            .Z (_N1217),
+            .I0 (N119[9]),
+            .I1 (_N975));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N369[10]  */ #(
+            .INIT(4'b1000))
+        \N369[10]  (
+            .Z (_N1218),
+            .I0 (N119[10]),
+            .I1 (_N975));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N369[11]  */ #(
+            .INIT(4'b1000))
+        \N369[11]  (
+            .Z (_N1219),
+            .I0 (N119[11]),
+            .I1 (_N975));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N369[12]  */ #(
+            .INIT(4'b1000))
+        \N369[12]  (
+            .Z (_N1220),
+            .I0 (N119[12]),
+            .I1 (_N975));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N369[13]  */ #(
+            .INIT(4'b1000))
+        \N369[13]  (
+            .Z (_N1221),
+            .I0 (N119[13]),
+            .I1 (_N975));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N369[14]  */ #(
+            .INIT(4'b1000))
+        \N369[14]  (
+            .Z (_N1222),
+            .I0 (N119[14]),
+            .I1 (_N975));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N369[15]  */ #(
+            .INIT(4'b1000))
+        \N369[15]  (
+            .Z (_N1129),
+            .I0 (N119[15]),
+            .I1 (_N975));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N369[16]  */ #(
+            .INIT(4'b1000))
+        \N369[16]  (
+            .Z (_N1135),
+            .I0 (N119[16]),
+            .I1 (_N975));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N369[17]  */ #(
+            .INIT(4'b1000))
+        \N369[17]  (
+            .Z (_N1128),
+            .I0 (N119[17]),
+            .I1 (_N975));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N369[18]  */ #(
+            .INIT(4'b1000))
+        \N369[18]  (
+            .Z (_N1131),
+            .I0 (N119[18]),
+            .I1 (_N975));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N369[19]  */ #(
+            .INIT(4'b1000))
+        \N369[19]  (
+            .Z (_N1148),
+            .I0 (N119[19]),
+            .I1 (_N975));
+	// Z = I0&I1 ;
+
+    GTP_LUT4 /* N372 */ #(
+            .INIT(16'b0100000000000000))
+        N372_vname (
+            .Z (N372),
+            .I0 (_N1056),
+            .I1 (counter_p[18]),
+            .I2 (counter_p[19]),
+            .I3 (nt_en_ab));
+    // defparam N372_vname.orig_name = N372;
+	// Z = ~I0&I1&I2&I3 ;
+	// ../source/rtl/smart_car.v:222
+
+    GTP_LUT4 /* N373 */ #(
+            .INIT(16'b1011111100000000))
+        N373_vname (
+            .Z (N373),
+            .I0 (_N1056),
+            .I1 (counter_p[18]),
+            .I2 (counter_p[19]),
+            .I3 (nt_en_ab));
+    // defparam N373_vname.orig_name = N373;
+	// Z = (~I2&I3)|(~I1&I3)|(I0&I3) ;
+	// ../source/rtl/smart_car.v:222
+
+    GTP_LUT5 /* \N375[0]_0  */ #(
+            .INIT(32'b10001000100011001000100010001000))
+        \N375[0]_0  (
+            .Z (_N1107),
+            .I0 (_N1620),
+            .I1 (N172[0]),
+            .I2 (counter_t[16]),
+            .I3 (counter_t[19]),
+            .I4 (_N1057));
+	// Z = (I0&I1)|(I1&~I2&~I3&I4) ;
+
+    GTP_LUT2 /* \N375[1]  */ #(
+            .INIT(4'b1000))
+        \N375[1]  (
+            .Z (_N1115),
+            .I0 (N172[1]),
+            .I1 (_N847));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N375[2]  */ #(
+            .INIT(4'b1000))
+        \N375[2]  (
+            .Z (_N1121),
+            .I0 (N172[2]),
+            .I1 (_N847));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N375[3]  */ #(
+            .INIT(4'b1000))
+        \N375[3]  (
+            .Z (_N1119),
+            .I0 (N172[3]),
+            .I1 (_N847));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N375[4]  */ #(
+            .INIT(4'b1000))
+        \N375[4]  (
+            .Z (_N1143),
+            .I0 (N172[4]),
+            .I1 (_N847));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N375[5]  */ #(
+            .INIT(4'b1000))
+        \N375[5]  (
+            .Z (_N1159),
+            .I0 (N172[5]),
+            .I1 (_N847));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N375[6]  */ #(
+            .INIT(4'b1000))
+        \N375[6]  (
+            .Z (_N1162),
+            .I0 (N172[6]),
+            .I1 (_N847));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N375[7]  */ #(
+            .INIT(4'b1000))
+        \N375[7]  (
+            .Z (_N1168),
+            .I0 (N172[7]),
+            .I1 (_N847));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N375[8]  */ #(
+            .INIT(4'b1000))
+        \N375[8]  (
+            .Z (_N1117),
+            .I0 (N172[8]),
+            .I1 (_N847));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N375[9]  */ #(
+            .INIT(4'b1000))
+        \N375[9]  (
+            .Z (_N1130),
+            .I0 (N172[9]),
+            .I1 (_N847));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N375[10]  */ #(
+            .INIT(4'b1000))
+        \N375[10]  (
+            .Z (_N1146),
+            .I0 (N172[10]),
+            .I1 (_N847));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N375[11]  */ #(
+            .INIT(4'b1000))
+        \N375[11]  (
+            .Z (_N1132),
+            .I0 (N172[11]),
+            .I1 (_N847));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N375[12]  */ #(
+            .INIT(4'b1000))
+        \N375[12]  (
+            .Z (_N1171),
+            .I0 (N172[12]),
+            .I1 (_N847));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N375[13]  */ #(
+            .INIT(4'b1000))
+        \N375[13]  (
+            .Z (_N1167),
+            .I0 (N172[13]),
+            .I1 (_N847));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N375[14]  */ #(
+            .INIT(4'b1000))
+        \N375[14]  (
+            .Z (_N1163),
+            .I0 (N172[14]),
+            .I1 (_N847));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N375[15]  */ #(
+            .INIT(4'b1000))
+        \N375[15]  (
+            .Z (_N1161),
+            .I0 (N172[15]),
+            .I1 (_N847));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N375[16]  */ #(
+            .INIT(4'b1000))
+        \N375[16]  (
+            .Z (_N1158),
+            .I0 (N172[16]),
+            .I1 (_N847));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N375[17]  */ #(
+            .INIT(4'b1000))
+        \N375[17]  (
+            .Z (_N1155),
+            .I0 (N172[17]),
+            .I1 (_N847));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N375[18]  */ #(
+            .INIT(4'b1000))
+        \N375[18]  (
+            .Z (_N1153),
+            .I0 (N172[18]),
+            .I1 (_N847));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N375[19]  */ #(
+            .INIT(4'b1000))
+        \N375[19]  (
+            .Z (_N1151),
+            .I0 (N172[19]),
+            .I1 (_N847));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \N375[20]  */ #(
+            .INIT(4'b1000))
+        \N375[20]  (
+            .Z (_N1149),
+            .I0 (N172[20]),
+            .I1 (_N847));
+	// Z = I0&I1 ;
+
+    GTP_LUT4 /* N381_3 */ #(
+            .INIT(16'b0000101111111101))
+        N381_3 (
+            .Z (N381),
+            .I0 (echo_a1),
+            .I1 (echo_a2),
+            .I2 (curr_state_a[1]),
+            .I3 (curr_state_a[0]));
+	// Z = (~I0&~I3)|(I1&~I3)|(I2&~I3)|(~I1&~I2&I3)|(I0&~I2&I3) ;
+
+    GTP_LUT4 /* N388_3 */ #(
+            .INIT(16'b0000010011110010))
+        N388_3 (
+            .Z (N388),
+            .I0 (echo_a1),
+            .I1 (echo_a2),
+            .I2 (curr_state_a[1]),
+            .I3 (curr_state_a[0]));
+	// Z = (I2&~I3)|(I0&~I1&~I3)|(~I0&I1&~I2&I3) ;
+
+    GTP_LUT4 /* N395_3 */ #(
+            .INIT(16'b0000101111111101))
+        N395_3 (
+            .Z (N395),
+            .I0 (echo_b1),
+            .I1 (echo_b2),
+            .I2 (curr_state_b[1]),
+            .I3 (curr_state_b[0]));
+	// Z = (~I0&~I3)|(I1&~I3)|(I2&~I3)|(~I1&~I2&I3)|(I0&~I2&I3) ;
+
+    GTP_LUT4 /* N402_3 */ #(
+            .INIT(16'b0000010011110010))
+        N402_3 (
+            .Z (N402),
+            .I0 (echo_b1),
+            .I1 (echo_b2),
+            .I2 (curr_state_b[1]),
+            .I3 (curr_state_b[0]));
+	// Z = (I2&~I3)|(I0&~I1&~I3)|(~I0&I1&~I2&I3) ;
+
+    GTP_LUT2 /* N405_1 */ #(
+            .INIT(4'b0111))
+        N405_1 (
+            .Z (N405),
+            .I0 (curr_state_b[1]),
+            .I1 (curr_state_b[0]));
+	// Z = (~I1)|(~I0) ;
+
+    GTP_LUT2 /* N408_1 */ #(
+            .INIT(4'b0111))
+        N408_1 (
+            .Z (N408),
+            .I0 (curr_state_a[1]),
+            .I1 (curr_state_a[0]));
+	// Z = (~I1)|(~I0) ;
+
+(* PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="C8", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* a_ibuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        a_ibuf (
+            .O (nt_a),
+            .I (a));
+	// ../source/rtl/smart_car.v:14
+
+(* PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="E8", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* b_ibuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        b_ibuf (
+            .O (nt_l2),
+            .I (b));
+	// ../source/rtl/smart_car.v:14
+
+    GTP_DFF_CE /* \counter_e_a[0]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_a[0]  (
+            .Q (counter_e_a[0]),
+            .C (N0),
+            .CE (N381),
+            .CLK (nt_sys_clk),
+            .D (_N1223));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \counter_e_a[1]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_a[1]  (
+            .Q (counter_e_a[1]),
+            .C (N0),
+            .CE (N381),
+            .CLK (nt_sys_clk),
+            .D (_N1225));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \counter_e_a[2]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_a[2]  (
+            .Q (counter_e_a[2]),
+            .C (N0),
+            .CE (N381),
+            .CLK (nt_sys_clk),
+            .D (_N1227));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \counter_e_a[3]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_a[3]  (
+            .Q (counter_e_a[3]),
+            .C (N0),
+            .CE (N381),
+            .CLK (nt_sys_clk),
+            .D (_N1229));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \counter_e_a[4]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_a[4]  (
+            .Q (counter_e_a[4]),
+            .C (N0),
+            .CE (N381),
+            .CLK (nt_sys_clk),
+            .D (_N1231));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \counter_e_a[5]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_a[5]  (
+            .Q (counter_e_a[5]),
+            .C (N0),
+            .CE (N381),
+            .CLK (nt_sys_clk),
+            .D (_N1233));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \counter_e_a[6]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_a[6]  (
+            .Q (counter_e_a[6]),
+            .C (N0),
+            .CE (N381),
+            .CLK (nt_sys_clk),
+            .D (_N1235));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \counter_e_a[7]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_a[7]  (
+            .Q (counter_e_a[7]),
+            .C (N0),
+            .CE (N381),
+            .CLK (nt_sys_clk),
+            .D (_N1237));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \counter_e_a[8]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_a[8]  (
+            .Q (counter_e_a[8]),
+            .C (N0),
+            .CE (N381),
+            .CLK (nt_sys_clk),
+            .D (_N1239));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \counter_e_a[9]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_a[9]  (
+            .Q (counter_e_a[9]),
+            .C (N0),
+            .CE (N381),
+            .CLK (nt_sys_clk),
+            .D (_N1241));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \counter_e_a[10]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_a[10]  (
+            .Q (counter_e_a[10]),
+            .C (N0),
+            .CE (N381),
+            .CLK (nt_sys_clk),
+            .D (_N1243));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \counter_e_a[11]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_a[11]  (
+            .Q (counter_e_a[11]),
+            .C (N0),
+            .CE (N381),
+            .CLK (nt_sys_clk),
+            .D (_N1245));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \counter_e_a[12]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_a[12]  (
+            .Q (counter_e_a[12]),
+            .C (N0),
+            .CE (N381),
+            .CLK (nt_sys_clk),
+            .D (_N1247));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \counter_e_a[13]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_a[13]  (
+            .Q (counter_e_a[13]),
+            .C (N0),
+            .CE (N381),
+            .CLK (nt_sys_clk),
+            .D (_N1249));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \counter_e_a[14]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_a[14]  (
+            .Q (counter_e_a[14]),
+            .C (N0),
+            .CE (N381),
+            .CLK (nt_sys_clk),
+            .D (_N1251));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \counter_e_a[15]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_a[15]  (
+            .Q (counter_e_a[15]),
+            .C (N0),
+            .CE (N381),
+            .CLK (nt_sys_clk),
+            .D (_N1253));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \counter_e_a[16]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_a[16]  (
+            .Q (counter_e_a[16]),
+            .C (N0),
+            .CE (N381),
+            .CLK (nt_sys_clk),
+            .D (_N1255));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \counter_e_a[17]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_a[17]  (
+            .Q (counter_e_a[17]),
+            .C (N0),
+            .CE (N381),
+            .CLK (nt_sys_clk),
+            .D (_N1257));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \counter_e_a[18]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_a[18]  (
+            .Q (counter_e_a[18]),
+            .C (N0),
+            .CE (N381),
+            .CLK (nt_sys_clk),
+            .D (_N1259));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \counter_e_a[19]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_a[19]  (
+            .Q (counter_e_a[19]),
+            .C (N0),
+            .CE (N381),
+            .CLK (nt_sys_clk),
+            .D (_N1261));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_LUT2 /* \counter_e_a[20:0]_0  */ #(
+            .INIT(4'b1000))
+        \counter_e_a[20:0]_0  (
+            .Z (_N1223),
+            .I0 (curr_state_a[0]),
+            .I1 (N193[0]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_a[20:0]_1  */ #(
+            .INIT(4'b1000))
+        \counter_e_a[20:0]_1  (
+            .Z (_N1225),
+            .I0 (curr_state_a[0]),
+            .I1 (N193[1]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_a[20:0]_2  */ #(
+            .INIT(4'b1000))
+        \counter_e_a[20:0]_2  (
+            .Z (_N1227),
+            .I0 (curr_state_a[0]),
+            .I1 (N193[2]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_a[20:0]_3  */ #(
+            .INIT(4'b1000))
+        \counter_e_a[20:0]_3  (
+            .Z (_N1229),
+            .I0 (curr_state_a[0]),
+            .I1 (N193[3]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_a[20:0]_4  */ #(
+            .INIT(4'b1000))
+        \counter_e_a[20:0]_4  (
+            .Z (_N1231),
+            .I0 (curr_state_a[0]),
+            .I1 (N193[4]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_a[20:0]_5  */ #(
+            .INIT(4'b1000))
+        \counter_e_a[20:0]_5  (
+            .Z (_N1233),
+            .I0 (curr_state_a[0]),
+            .I1 (N193[5]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_a[20:0]_6  */ #(
+            .INIT(4'b1000))
+        \counter_e_a[20:0]_6  (
+            .Z (_N1235),
+            .I0 (curr_state_a[0]),
+            .I1 (N193[6]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_a[20:0]_7  */ #(
+            .INIT(4'b1000))
+        \counter_e_a[20:0]_7  (
+            .Z (_N1237),
+            .I0 (curr_state_a[0]),
+            .I1 (N193[7]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_a[20:0]_8  */ #(
+            .INIT(4'b1000))
+        \counter_e_a[20:0]_8  (
+            .Z (_N1239),
+            .I0 (curr_state_a[0]),
+            .I1 (N193[8]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_a[20:0]_9  */ #(
+            .INIT(4'b1000))
+        \counter_e_a[20:0]_9  (
+            .Z (_N1241),
+            .I0 (curr_state_a[0]),
+            .I1 (N193[9]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_a[20:0]_10  */ #(
+            .INIT(4'b1000))
+        \counter_e_a[20:0]_10  (
+            .Z (_N1243),
+            .I0 (curr_state_a[0]),
+            .I1 (N193[10]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_a[20:0]_11  */ #(
+            .INIT(4'b1000))
+        \counter_e_a[20:0]_11  (
+            .Z (_N1245),
+            .I0 (curr_state_a[0]),
+            .I1 (N193[11]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_a[20:0]_12  */ #(
+            .INIT(4'b1000))
+        \counter_e_a[20:0]_12  (
+            .Z (_N1247),
+            .I0 (curr_state_a[0]),
+            .I1 (N193[12]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_a[20:0]_13  */ #(
+            .INIT(4'b1000))
+        \counter_e_a[20:0]_13  (
+            .Z (_N1249),
+            .I0 (curr_state_a[0]),
+            .I1 (N193[13]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_a[20:0]_14  */ #(
+            .INIT(4'b1000))
+        \counter_e_a[20:0]_14  (
+            .Z (_N1251),
+            .I0 (curr_state_a[0]),
+            .I1 (N193[14]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_a[20:0]_15  */ #(
+            .INIT(4'b1000))
+        \counter_e_a[20:0]_15  (
+            .Z (_N1253),
+            .I0 (curr_state_a[0]),
+            .I1 (N193[15]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_a[20:0]_16  */ #(
+            .INIT(4'b1000))
+        \counter_e_a[20:0]_16  (
+            .Z (_N1255),
+            .I0 (curr_state_a[0]),
+            .I1 (N193[16]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_a[20:0]_17  */ #(
+            .INIT(4'b1000))
+        \counter_e_a[20:0]_17  (
+            .Z (_N1257),
+            .I0 (curr_state_a[0]),
+            .I1 (N193[17]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_a[20:0]_18  */ #(
+            .INIT(4'b1000))
+        \counter_e_a[20:0]_18  (
+            .Z (_N1259),
+            .I0 (curr_state_a[0]),
+            .I1 (N193[18]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_a[20:0]_19  */ #(
+            .INIT(4'b1000))
+        \counter_e_a[20:0]_19  (
+            .Z (_N1261),
+            .I0 (curr_state_a[0]),
+            .I1 (N193[19]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_a[20:0]_20  */ #(
+            .INIT(4'b1000))
+        \counter_e_a[20:0]_20  (
+            .Z (_N1263),
+            .I0 (curr_state_a[0]),
+            .I1 (N193[20]));
+	// Z = I0&I1 ;
+
+    GTP_DFF_CE /* \counter_e_a[20]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_a[20]  (
+            .Q (counter_e_a[20]),
+            .C (N0),
+            .CE (N381),
+            .CLK (nt_sys_clk),
+            .D (_N1263));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \counter_e_b[0]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_b[0]  (
+            .Q (counter_e_b[0]),
+            .C (N0),
+            .CE (N395),
+            .CLK (nt_sys_clk),
+            .D (_N1265));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \counter_e_b[1]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_b[1]  (
+            .Q (counter_e_b[1]),
+            .C (N0),
+            .CE (N395),
+            .CLK (nt_sys_clk),
+            .D (_N1267));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \counter_e_b[2]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_b[2]  (
+            .Q (counter_e_b[2]),
+            .C (N0),
+            .CE (N395),
+            .CLK (nt_sys_clk),
+            .D (_N1269));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \counter_e_b[3]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_b[3]  (
+            .Q (counter_e_b[3]),
+            .C (N0),
+            .CE (N395),
+            .CLK (nt_sys_clk),
+            .D (_N1271));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \counter_e_b[4]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_b[4]  (
+            .Q (counter_e_b[4]),
+            .C (N0),
+            .CE (N395),
+            .CLK (nt_sys_clk),
+            .D (_N1273));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \counter_e_b[5]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_b[5]  (
+            .Q (counter_e_b[5]),
+            .C (N0),
+            .CE (N395),
+            .CLK (nt_sys_clk),
+            .D (_N1275));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \counter_e_b[6]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_b[6]  (
+            .Q (counter_e_b[6]),
+            .C (N0),
+            .CE (N395),
+            .CLK (nt_sys_clk),
+            .D (_N1277));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \counter_e_b[7]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_b[7]  (
+            .Q (counter_e_b[7]),
+            .C (N0),
+            .CE (N395),
+            .CLK (nt_sys_clk),
+            .D (_N1279));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \counter_e_b[8]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_b[8]  (
+            .Q (counter_e_b[8]),
+            .C (N0),
+            .CE (N395),
+            .CLK (nt_sys_clk),
+            .D (_N1281));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \counter_e_b[9]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_b[9]  (
+            .Q (counter_e_b[9]),
+            .C (N0),
+            .CE (N395),
+            .CLK (nt_sys_clk),
+            .D (_N1283));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \counter_e_b[10]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_b[10]  (
+            .Q (counter_e_b[10]),
+            .C (N0),
+            .CE (N395),
+            .CLK (nt_sys_clk),
+            .D (_N1285));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \counter_e_b[11]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_b[11]  (
+            .Q (counter_e_b[11]),
+            .C (N0),
+            .CE (N395),
+            .CLK (nt_sys_clk),
+            .D (_N1287));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \counter_e_b[12]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_b[12]  (
+            .Q (counter_e_b[12]),
+            .C (N0),
+            .CE (N395),
+            .CLK (nt_sys_clk),
+            .D (_N1289));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \counter_e_b[13]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_b[13]  (
+            .Q (counter_e_b[13]),
+            .C (N0),
+            .CE (N395),
+            .CLK (nt_sys_clk),
+            .D (_N1291));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \counter_e_b[14]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_b[14]  (
+            .Q (counter_e_b[14]),
+            .C (N0),
+            .CE (N395),
+            .CLK (nt_sys_clk),
+            .D (_N1293));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \counter_e_b[15]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_b[15]  (
+            .Q (counter_e_b[15]),
+            .C (N0),
+            .CE (N395),
+            .CLK (nt_sys_clk),
+            .D (_N1295));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \counter_e_b[16]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_b[16]  (
+            .Q (counter_e_b[16]),
+            .C (N0),
+            .CE (N395),
+            .CLK (nt_sys_clk),
+            .D (_N1297));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \counter_e_b[17]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_b[17]  (
+            .Q (counter_e_b[17]),
+            .C (N0),
+            .CE (N395),
+            .CLK (nt_sys_clk),
+            .D (_N1299));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \counter_e_b[18]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_b[18]  (
+            .Q (counter_e_b[18]),
+            .C (N0),
+            .CE (N395),
+            .CLK (nt_sys_clk),
+            .D (_N1301));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \counter_e_b[19]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_b[19]  (
+            .Q (counter_e_b[19]),
+            .C (N0),
+            .CE (N395),
+            .CLK (nt_sys_clk),
+            .D (_N1303));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_LUT2 /* \counter_e_b[20:0]_0  */ #(
+            .INIT(4'b1000))
+        \counter_e_b[20:0]_0  (
+            .Z (_N1265),
+            .I0 (curr_state_b[0]),
+            .I1 (N243[0]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_b[20:0]_1  */ #(
+            .INIT(4'b1000))
+        \counter_e_b[20:0]_1  (
+            .Z (_N1267),
+            .I0 (curr_state_b[0]),
+            .I1 (N243[1]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_b[20:0]_2  */ #(
+            .INIT(4'b1000))
+        \counter_e_b[20:0]_2  (
+            .Z (_N1269),
+            .I0 (curr_state_b[0]),
+            .I1 (N243[2]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_b[20:0]_3  */ #(
+            .INIT(4'b1000))
+        \counter_e_b[20:0]_3  (
+            .Z (_N1271),
+            .I0 (curr_state_b[0]),
+            .I1 (N243[3]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_b[20:0]_4  */ #(
+            .INIT(4'b1000))
+        \counter_e_b[20:0]_4  (
+            .Z (_N1273),
+            .I0 (curr_state_b[0]),
+            .I1 (N243[4]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_b[20:0]_5  */ #(
+            .INIT(4'b1000))
+        \counter_e_b[20:0]_5  (
+            .Z (_N1275),
+            .I0 (curr_state_b[0]),
+            .I1 (N243[5]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_b[20:0]_6  */ #(
+            .INIT(4'b1000))
+        \counter_e_b[20:0]_6  (
+            .Z (_N1277),
+            .I0 (curr_state_b[0]),
+            .I1 (N243[6]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_b[20:0]_7  */ #(
+            .INIT(4'b1000))
+        \counter_e_b[20:0]_7  (
+            .Z (_N1279),
+            .I0 (curr_state_b[0]),
+            .I1 (N243[7]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_b[20:0]_8  */ #(
+            .INIT(4'b1000))
+        \counter_e_b[20:0]_8  (
+            .Z (_N1281),
+            .I0 (curr_state_b[0]),
+            .I1 (N243[8]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_b[20:0]_9  */ #(
+            .INIT(4'b1000))
+        \counter_e_b[20:0]_9  (
+            .Z (_N1283),
+            .I0 (curr_state_b[0]),
+            .I1 (N243[9]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_b[20:0]_10  */ #(
+            .INIT(4'b1000))
+        \counter_e_b[20:0]_10  (
+            .Z (_N1285),
+            .I0 (curr_state_b[0]),
+            .I1 (N243[10]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_b[20:0]_11  */ #(
+            .INIT(4'b1000))
+        \counter_e_b[20:0]_11  (
+            .Z (_N1287),
+            .I0 (curr_state_b[0]),
+            .I1 (N243[11]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_b[20:0]_12  */ #(
+            .INIT(4'b1000))
+        \counter_e_b[20:0]_12  (
+            .Z (_N1289),
+            .I0 (curr_state_b[0]),
+            .I1 (N243[12]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_b[20:0]_13  */ #(
+            .INIT(4'b1000))
+        \counter_e_b[20:0]_13  (
+            .Z (_N1291),
+            .I0 (curr_state_b[0]),
+            .I1 (N243[13]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_b[20:0]_14  */ #(
+            .INIT(4'b1000))
+        \counter_e_b[20:0]_14  (
+            .Z (_N1293),
+            .I0 (curr_state_b[0]),
+            .I1 (N243[14]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_b[20:0]_15  */ #(
+            .INIT(4'b1000))
+        \counter_e_b[20:0]_15  (
+            .Z (_N1295),
+            .I0 (curr_state_b[0]),
+            .I1 (N243[15]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_b[20:0]_16  */ #(
+            .INIT(4'b1000))
+        \counter_e_b[20:0]_16  (
+            .Z (_N1297),
+            .I0 (curr_state_b[0]),
+            .I1 (N243[16]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_b[20:0]_17  */ #(
+            .INIT(4'b1000))
+        \counter_e_b[20:0]_17  (
+            .Z (_N1299),
+            .I0 (curr_state_b[0]),
+            .I1 (N243[17]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_b[20:0]_18  */ #(
+            .INIT(4'b1000))
+        \counter_e_b[20:0]_18  (
+            .Z (_N1301),
+            .I0 (curr_state_b[0]),
+            .I1 (N243[18]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_b[20:0]_19  */ #(
+            .INIT(4'b1000))
+        \counter_e_b[20:0]_19  (
+            .Z (_N1303),
+            .I0 (curr_state_b[0]),
+            .I1 (N243[19]));
+	// Z = I0&I1 ;
+
+    GTP_LUT2 /* \counter_e_b[20:0]_20  */ #(
+            .INIT(4'b1000))
+        \counter_e_b[20:0]_20  (
+            .Z (_N1305),
+            .I0 (curr_state_b[0]),
+            .I1 (N243[20]));
+	// Z = I0&I1 ;
+
+    GTP_DFF_CE /* \counter_e_b[20]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_e_b[20]  (
+            .Q (counter_e_b[20]),
+            .C (N0),
+            .CE (N395),
+            .CLK (nt_sys_clk),
+            .D (_N1305));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_C /* \counter_p[0]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_p[0]  (
+            .Q (counter_p[0]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1208));
+	// ../source/rtl/smart_car.v:127
+
+    GTP_DFF_C /* \counter_p[1]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_p[1]  (
+            .Q (counter_p[1]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1209));
+	// ../source/rtl/smart_car.v:127
+
+    GTP_DFF_C /* \counter_p[2]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_p[2]  (
+            .Q (counter_p[2]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1210));
+	// ../source/rtl/smart_car.v:127
+
+    GTP_DFF_C /* \counter_p[3]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_p[3]  (
+            .Q (counter_p[3]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1211));
+	// ../source/rtl/smart_car.v:127
+
+    GTP_DFF_C /* \counter_p[4]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_p[4]  (
+            .Q (counter_p[4]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1212));
+	// ../source/rtl/smart_car.v:127
+
+    GTP_DFF_C /* \counter_p[5]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_p[5]  (
+            .Q (counter_p[5]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1213));
+	// ../source/rtl/smart_car.v:127
+
+    GTP_DFF_C /* \counter_p[6]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_p[6]  (
+            .Q (counter_p[6]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1214));
+	// ../source/rtl/smart_car.v:127
+
+    GTP_DFF_C /* \counter_p[7]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_p[7]  (
+            .Q (counter_p[7]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1215));
+	// ../source/rtl/smart_car.v:127
+
+    GTP_DFF_C /* \counter_p[8]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_p[8]  (
+            .Q (counter_p[8]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1216));
+	// ../source/rtl/smart_car.v:127
+
+    GTP_DFF_C /* \counter_p[9]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_p[9]  (
+            .Q (counter_p[9]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1217));
+	// ../source/rtl/smart_car.v:127
+
+    GTP_DFF_C /* \counter_p[10]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_p[10]  (
+            .Q (counter_p[10]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1218));
+	// ../source/rtl/smart_car.v:127
+
+    GTP_DFF_C /* \counter_p[11]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_p[11]  (
+            .Q (counter_p[11]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1219));
+	// ../source/rtl/smart_car.v:127
+
+    GTP_DFF_C /* \counter_p[12]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_p[12]  (
+            .Q (counter_p[12]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1220));
+	// ../source/rtl/smart_car.v:127
+
+    GTP_DFF_C /* \counter_p[13]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_p[13]  (
+            .Q (counter_p[13]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1221));
+	// ../source/rtl/smart_car.v:127
+
+    GTP_DFF_C /* \counter_p[14]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_p[14]  (
+            .Q (counter_p[14]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1222));
+	// ../source/rtl/smart_car.v:127
+
+    GTP_DFF_C /* \counter_p[15]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_p[15]  (
+            .Q (counter_p[15]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1129));
+	// ../source/rtl/smart_car.v:127
+
+    GTP_DFF_C /* \counter_p[16]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_p[16]  (
+            .Q (counter_p[16]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1135));
+	// ../source/rtl/smart_car.v:127
+
+    GTP_DFF_C /* \counter_p[17]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_p[17]  (
+            .Q (counter_p[17]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1128));
+	// ../source/rtl/smart_car.v:127
+
+    GTP_DFF_C /* \counter_p[18]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_p[18]  (
+            .Q (counter_p[18]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1131));
+	// ../source/rtl/smart_car.v:127
+
+    GTP_DFF_C /* \counter_p[19]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_p[19]  (
+            .Q (counter_p[19]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1148));
+	// ../source/rtl/smart_car.v:127
+
+    GTP_DFF_C /* \counter_rgb[0]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb[0]  (
+            .Q (counter_rgb[0]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1172));
+	// ../source/rtl/smart_car.v:34
+
+    GTP_DFF_C /* \counter_rgb[1]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb[1]  (
+            .Q (counter_rgb[1]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1173));
+	// ../source/rtl/smart_car.v:34
+
+    GTP_DFF_C /* \counter_rgb[2]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb[2]  (
+            .Q (counter_rgb[2]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1174));
+	// ../source/rtl/smart_car.v:34
+
+    GTP_DFF_C /* \counter_rgb[3]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb[3]  (
+            .Q (counter_rgb[3]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1175));
+	// ../source/rtl/smart_car.v:34
+
+    GTP_DFF_C /* \counter_rgb[4]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb[4]  (
+            .Q (counter_rgb[4]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1176));
+	// ../source/rtl/smart_car.v:34
+
+    GTP_DFF_C /* \counter_rgb[5]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb[5]  (
+            .Q (counter_rgb[5]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1177));
+	// ../source/rtl/smart_car.v:34
+
+    GTP_DFF_CE /* \counter_rgb_t[0]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb_t[0]  (
+            .Q (counter_rgb_t[0]),
+            .C (N0),
+            .CE (N357),
+            .CLK (nt_sys_clk),
+            .D (_N1178));
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_CE /* \counter_rgb_t[1]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb_t[1]  (
+            .Q (counter_rgb_t[1]),
+            .C (N0),
+            .CE (N357),
+            .CLK (nt_sys_clk),
+            .D (_N1179));
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_CE /* \counter_rgb_t[2]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb_t[2]  (
+            .Q (counter_rgb_t[2]),
+            .C (N0),
+            .CE (N357),
+            .CLK (nt_sys_clk),
+            .D (_N1180));
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_CE /* \counter_rgb_t[3]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb_t[3]  (
+            .Q (counter_rgb_t[3]),
+            .C (N0),
+            .CE (N357),
+            .CLK (nt_sys_clk),
+            .D (_N1181));
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_CE /* \counter_rgb_t[4]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb_t[4]  (
+            .Q (counter_rgb_t[4]),
+            .C (N0),
+            .CE (N357),
+            .CLK (nt_sys_clk),
+            .D (_N1182));
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_CE /* \counter_rgb_t[5]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb_t[5]  (
+            .Q (counter_rgb_t[5]),
+            .C (N0),
+            .CE (N357),
+            .CLK (nt_sys_clk),
+            .D (_N1183));
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_CE /* \counter_rgb_t[6]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb_t[6]  (
+            .Q (counter_rgb_t[6]),
+            .C (N0),
+            .CE (N357),
+            .CLK (nt_sys_clk),
+            .D (_N1184));
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_CE /* \counter_rgb_t[7]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb_t[7]  (
+            .Q (counter_rgb_t[7]),
+            .C (N0),
+            .CE (N357),
+            .CLK (nt_sys_clk),
+            .D (_N1185));
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_CE /* \counter_rgb_t[8]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb_t[8]  (
+            .Q (counter_rgb_t[8]),
+            .C (N0),
+            .CE (N357),
+            .CLK (nt_sys_clk),
+            .D (_N1186));
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_CE /* \counter_rgb_t[9]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb_t[9]  (
+            .Q (counter_rgb_t[9]),
+            .C (N0),
+            .CE (N357),
+            .CLK (nt_sys_clk),
+            .D (_N1187));
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_CE /* \counter_rgb_t[10]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb_t[10]  (
+            .Q (counter_rgb_t[10]),
+            .C (N0),
+            .CE (N357),
+            .CLK (nt_sys_clk),
+            .D (_N1188));
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_CE /* \counter_rgb_t[11]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb_t[11]  (
+            .Q (counter_rgb_t[11]),
+            .C (N0),
+            .CE (N357),
+            .CLK (nt_sys_clk),
+            .D (_N1189));
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_CE /* \counter_rgb_t[12]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb_t[12]  (
+            .Q (counter_rgb_t[12]),
+            .C (N0),
+            .CE (N357),
+            .CLK (nt_sys_clk),
+            .D (_N1190));
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_CE /* \counter_rgb_t[13]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb_t[13]  (
+            .Q (counter_rgb_t[13]),
+            .C (N0),
+            .CE (N357),
+            .CLK (nt_sys_clk),
+            .D (_N1191));
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_CE /* \counter_rgb_t[14]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb_t[14]  (
+            .Q (counter_rgb_t[14]),
+            .C (N0),
+            .CE (N357),
+            .CLK (nt_sys_clk),
+            .D (_N1192));
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_CE /* \counter_rgb_t[15]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb_t[15]  (
+            .Q (counter_rgb_t[15]),
+            .C (N0),
+            .CE (N357),
+            .CLK (nt_sys_clk),
+            .D (_N1193));
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_CE /* \counter_rgb_t[16]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb_t[16]  (
+            .Q (counter_rgb_t[16]),
+            .C (N0),
+            .CE (N357),
+            .CLK (nt_sys_clk),
+            .D (_N1194));
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_CE /* \counter_rgb_t[17]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb_t[17]  (
+            .Q (counter_rgb_t[17]),
+            .C (N0),
+            .CE (N357),
+            .CLK (nt_sys_clk),
+            .D (_N1195));
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_CE /* \counter_rgb_t[18]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb_t[18]  (
+            .Q (counter_rgb_t[18]),
+            .C (N0),
+            .CE (N357),
+            .CLK (nt_sys_clk),
+            .D (_N1196));
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_CE /* \counter_rgb_t[19]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb_t[19]  (
+            .Q (counter_rgb_t[19]),
+            .C (N0),
+            .CE (N357),
+            .CLK (nt_sys_clk),
+            .D (_N1197));
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_CE /* \counter_rgb_t[20]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb_t[20]  (
+            .Q (counter_rgb_t[20]),
+            .C (N0),
+            .CE (N357),
+            .CLK (nt_sys_clk),
+            .D (_N1198));
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_CE /* \counter_rgb_t[21]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb_t[21]  (
+            .Q (counter_rgb_t[21]),
+            .C (N0),
+            .CE (N357),
+            .CLK (nt_sys_clk),
+            .D (_N1199));
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_CE /* \counter_rgb_t[22]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb_t[22]  (
+            .Q (counter_rgb_t[22]),
+            .C (N0),
+            .CE (N357),
+            .CLK (nt_sys_clk),
+            .D (_N1200));
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_CE /* \counter_rgb_t[23]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_rgb_t[23]  (
+            .Q (counter_rgb_t[23]),
+            .C (N0),
+            .CE (N357),
+            .CLK (nt_sys_clk),
+            .D (_N1201));
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_C /* \counter_t[0]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_t[0]  (
+            .Q (counter_t[0]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1107));
+	// ../source/rtl/smart_car.v:238
+
+    GTP_DFF_C /* \counter_t[1]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_t[1]  (
+            .Q (counter_t[1]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1115));
+	// ../source/rtl/smart_car.v:238
+
+    GTP_DFF_C /* \counter_t[2]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_t[2]  (
+            .Q (counter_t[2]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1121));
+	// ../source/rtl/smart_car.v:238
+
+    GTP_DFF_C /* \counter_t[3]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_t[3]  (
+            .Q (counter_t[3]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1119));
+	// ../source/rtl/smart_car.v:238
+
+    GTP_DFF_C /* \counter_t[4]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_t[4]  (
+            .Q (counter_t[4]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1143));
+	// ../source/rtl/smart_car.v:238
+
+    GTP_DFF_C /* \counter_t[5]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_t[5]  (
+            .Q (counter_t[5]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1159));
+	// ../source/rtl/smart_car.v:238
+
+    GTP_DFF_C /* \counter_t[6]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_t[6]  (
+            .Q (counter_t[6]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1162));
+	// ../source/rtl/smart_car.v:238
+
+    GTP_DFF_C /* \counter_t[7]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_t[7]  (
+            .Q (counter_t[7]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1168));
+	// ../source/rtl/smart_car.v:238
+
+    GTP_DFF_C /* \counter_t[8]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_t[8]  (
+            .Q (counter_t[8]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1117));
+	// ../source/rtl/smart_car.v:238
+
+    GTP_DFF_C /* \counter_t[9]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_t[9]  (
+            .Q (counter_t[9]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1130));
+	// ../source/rtl/smart_car.v:238
+
+    GTP_DFF_C /* \counter_t[10]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_t[10]  (
+            .Q (counter_t[10]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1146));
+	// ../source/rtl/smart_car.v:238
+
+    GTP_DFF_C /* \counter_t[11]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_t[11]  (
+            .Q (counter_t[11]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1132));
+	// ../source/rtl/smart_car.v:238
+
+    GTP_DFF_C /* \counter_t[12]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_t[12]  (
+            .Q (counter_t[12]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1171));
+	// ../source/rtl/smart_car.v:238
+
+    GTP_DFF_C /* \counter_t[13]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_t[13]  (
+            .Q (counter_t[13]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1167));
+	// ../source/rtl/smart_car.v:238
+
+    GTP_DFF_C /* \counter_t[14]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_t[14]  (
+            .Q (counter_t[14]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1163));
+	// ../source/rtl/smart_car.v:238
+
+    GTP_DFF_C /* \counter_t[15]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_t[15]  (
+            .Q (counter_t[15]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1161));
+	// ../source/rtl/smart_car.v:238
+
+    GTP_DFF_C /* \counter_t[16]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_t[16]  (
+            .Q (counter_t[16]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1158));
+	// ../source/rtl/smart_car.v:238
+
+    GTP_DFF_C /* \counter_t[17]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_t[17]  (
+            .Q (counter_t[17]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1155));
+	// ../source/rtl/smart_car.v:238
+
+    GTP_DFF_C /* \counter_t[18]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_t[18]  (
+            .Q (counter_t[18]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1153));
+	// ../source/rtl/smart_car.v:238
+
+    GTP_DFF_C /* \counter_t[19]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_t[19]  (
+            .Q (counter_t[19]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1151));
+	// ../source/rtl/smart_car.v:238
+
+    GTP_DFF_C /* \counter_t[20]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \counter_t[20]  (
+            .Q (counter_t[20]),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N1149));
+	// ../source/rtl/smart_car.v:238
+
+    GTP_DFF_CE /* \curr_state_a[0]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \curr_state_a[0]  (
+            .Q (curr_state_a[0]),
+            .C (N0),
+            .CE (N388),
+            .CLK (nt_sys_clk),
+            .D (next_state_a[0]));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \curr_state_a[1]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \curr_state_a[1]  (
+            .Q (curr_state_a[1]),
+            .C (N0),
+            .CE (N388),
+            .CLK (nt_sys_clk),
+            .D (next_state_a[1]));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \curr_state_b[0]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \curr_state_b[0]  (
+            .Q (curr_state_b[0]),
+            .C (N0),
+            .CE (N402),
+            .CLK (nt_sys_clk),
+            .D (next_state_b[0]));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \curr_state_b[1]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \curr_state_b[1]  (
+            .Q (curr_state_b[1]),
+            .C (N0),
+            .CE (N402),
+            .CLK (nt_sys_clk),
+            .D (next_state_b[1]));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \dis_reg_a[0]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_a[0]  (
+            .Q (dis_reg_a[0]),
+            .C (N0),
+            .CE (N285),
+            .CLK (nt_sys_clk),
+            .D (counter_e_a[0]));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \dis_reg_a[1]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_a[1]  (
+            .Q (dis_reg_a[1]),
+            .C (N0),
+            .CE (N285),
+            .CLK (nt_sys_clk),
+            .D (counter_e_a[1]));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \dis_reg_a[2]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_a[2]  (
+            .Q (dis_reg_a[2]),
+            .C (N0),
+            .CE (N285),
+            .CLK (nt_sys_clk),
+            .D (counter_e_a[2]));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \dis_reg_a[3]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_a[3]  (
+            .Q (dis_reg_a[3]),
+            .C (N0),
+            .CE (N285),
+            .CLK (nt_sys_clk),
+            .D (counter_e_a[3]));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \dis_reg_a[4]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_a[4]  (
+            .Q (dis_reg_a[4]),
+            .C (N0),
+            .CE (N285),
+            .CLK (nt_sys_clk),
+            .D (counter_e_a[4]));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \dis_reg_a[5]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_a[5]  (
+            .Q (dis_reg_a[5]),
+            .C (N0),
+            .CE (N285),
+            .CLK (nt_sys_clk),
+            .D (counter_e_a[5]));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \dis_reg_a[6]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_a[6]  (
+            .Q (dis_reg_a[6]),
+            .C (N0),
+            .CE (N285),
+            .CLK (nt_sys_clk),
+            .D (counter_e_a[6]));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \dis_reg_a[7]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_a[7]  (
+            .Q (dis_reg_a[7]),
+            .C (N0),
+            .CE (N285),
+            .CLK (nt_sys_clk),
+            .D (counter_e_a[7]));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \dis_reg_a[8]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_a[8]  (
+            .Q (dis_reg_a[8]),
+            .C (N0),
+            .CE (N285),
+            .CLK (nt_sys_clk),
+            .D (counter_e_a[8]));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \dis_reg_a[9]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_a[9]  (
+            .Q (dis_reg_a[9]),
+            .C (N0),
+            .CE (N285),
+            .CLK (nt_sys_clk),
+            .D (counter_e_a[9]));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \dis_reg_a[10]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_a[10]  (
+            .Q (dis_reg_a[10]),
+            .C (N0),
+            .CE (N285),
+            .CLK (nt_sys_clk),
+            .D (counter_e_a[10]));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \dis_reg_a[11]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_a[11]  (
+            .Q (dis_reg_a[11]),
+            .C (N0),
+            .CE (N285),
+            .CLK (nt_sys_clk),
+            .D (counter_e_a[11]));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \dis_reg_a[12]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_a[12]  (
+            .Q (dis_reg_a[12]),
+            .C (N0),
+            .CE (N285),
+            .CLK (nt_sys_clk),
+            .D (counter_e_a[12]));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \dis_reg_a[13]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_a[13]  (
+            .Q (dis_reg_a[13]),
+            .C (N0),
+            .CE (N285),
+            .CLK (nt_sys_clk),
+            .D (counter_e_a[13]));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \dis_reg_a[14]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_a[14]  (
+            .Q (dis_reg_a[14]),
+            .C (N0),
+            .CE (N285),
+            .CLK (nt_sys_clk),
+            .D (counter_e_a[14]));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \dis_reg_a[15]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_a[15]  (
+            .Q (dis_reg_a[15]),
+            .C (N0),
+            .CE (N285),
+            .CLK (nt_sys_clk),
+            .D (counter_e_a[15]));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \dis_reg_a[16]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_a[16]  (
+            .Q (dis_reg_a[16]),
+            .C (N0),
+            .CE (N285),
+            .CLK (nt_sys_clk),
+            .D (counter_e_a[16]));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \dis_reg_a[17]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_a[17]  (
+            .Q (dis_reg_a[17]),
+            .C (N0),
+            .CE (N285),
+            .CLK (nt_sys_clk),
+            .D (counter_e_a[17]));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \dis_reg_a[18]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_a[18]  (
+            .Q (dis_reg_a[18]),
+            .C (N0),
+            .CE (N285),
+            .CLK (nt_sys_clk),
+            .D (counter_e_a[18]));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \dis_reg_a[19]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_a[19]  (
+            .Q (dis_reg_a[19]),
+            .C (N0),
+            .CE (N285),
+            .CLK (nt_sys_clk),
+            .D (counter_e_a[19]));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \dis_reg_a[20]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_a[20]  (
+            .Q (dis_reg_a[20]),
+            .C (N0),
+            .CE (N285),
+            .CLK (nt_sys_clk),
+            .D (counter_e_a[20]));
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_CE /* \dis_reg_b[0]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_b[0]  (
+            .Q (dis_reg_b[0]),
+            .C (N0),
+            .CE (N290),
+            .CLK (nt_sys_clk),
+            .D (counter_e_b[0]));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \dis_reg_b[1]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_b[1]  (
+            .Q (dis_reg_b[1]),
+            .C (N0),
+            .CE (N290),
+            .CLK (nt_sys_clk),
+            .D (counter_e_b[1]));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \dis_reg_b[2]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_b[2]  (
+            .Q (dis_reg_b[2]),
+            .C (N0),
+            .CE (N290),
+            .CLK (nt_sys_clk),
+            .D (counter_e_b[2]));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \dis_reg_b[3]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_b[3]  (
+            .Q (dis_reg_b[3]),
+            .C (N0),
+            .CE (N290),
+            .CLK (nt_sys_clk),
+            .D (counter_e_b[3]));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \dis_reg_b[4]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_b[4]  (
+            .Q (dis_reg_b[4]),
+            .C (N0),
+            .CE (N290),
+            .CLK (nt_sys_clk),
+            .D (counter_e_b[4]));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \dis_reg_b[5]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_b[5]  (
+            .Q (dis_reg_b[5]),
+            .C (N0),
+            .CE (N290),
+            .CLK (nt_sys_clk),
+            .D (counter_e_b[5]));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \dis_reg_b[6]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_b[6]  (
+            .Q (dis_reg_b[6]),
+            .C (N0),
+            .CE (N290),
+            .CLK (nt_sys_clk),
+            .D (counter_e_b[6]));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \dis_reg_b[7]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_b[7]  (
+            .Q (dis_reg_b[7]),
+            .C (N0),
+            .CE (N290),
+            .CLK (nt_sys_clk),
+            .D (counter_e_b[7]));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \dis_reg_b[8]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_b[8]  (
+            .Q (dis_reg_b[8]),
+            .C (N0),
+            .CE (N290),
+            .CLK (nt_sys_clk),
+            .D (counter_e_b[8]));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \dis_reg_b[9]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_b[9]  (
+            .Q (dis_reg_b[9]),
+            .C (N0),
+            .CE (N290),
+            .CLK (nt_sys_clk),
+            .D (counter_e_b[9]));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \dis_reg_b[10]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_b[10]  (
+            .Q (dis_reg_b[10]),
+            .C (N0),
+            .CE (N290),
+            .CLK (nt_sys_clk),
+            .D (counter_e_b[10]));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \dis_reg_b[11]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_b[11]  (
+            .Q (dis_reg_b[11]),
+            .C (N0),
+            .CE (N290),
+            .CLK (nt_sys_clk),
+            .D (counter_e_b[11]));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \dis_reg_b[12]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_b[12]  (
+            .Q (dis_reg_b[12]),
+            .C (N0),
+            .CE (N290),
+            .CLK (nt_sys_clk),
+            .D (counter_e_b[12]));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \dis_reg_b[13]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_b[13]  (
+            .Q (dis_reg_b[13]),
+            .C (N0),
+            .CE (N290),
+            .CLK (nt_sys_clk),
+            .D (counter_e_b[13]));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \dis_reg_b[14]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_b[14]  (
+            .Q (dis_reg_b[14]),
+            .C (N0),
+            .CE (N290),
+            .CLK (nt_sys_clk),
+            .D (counter_e_b[14]));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \dis_reg_b[15]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_b[15]  (
+            .Q (dis_reg_b[15]),
+            .C (N0),
+            .CE (N290),
+            .CLK (nt_sys_clk),
+            .D (counter_e_b[15]));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \dis_reg_b[16]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_b[16]  (
+            .Q (dis_reg_b[16]),
+            .C (N0),
+            .CE (N290),
+            .CLK (nt_sys_clk),
+            .D (counter_e_b[16]));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \dis_reg_b[17]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_b[17]  (
+            .Q (dis_reg_b[17]),
+            .C (N0),
+            .CE (N290),
+            .CLK (nt_sys_clk),
+            .D (counter_e_b[17]));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \dis_reg_b[18]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_b[18]  (
+            .Q (dis_reg_b[18]),
+            .C (N0),
+            .CE (N290),
+            .CLK (nt_sys_clk),
+            .D (counter_e_b[18]));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \dis_reg_b[19]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_b[19]  (
+            .Q (dis_reg_b[19]),
+            .C (N0),
+            .CE (N290),
+            .CLK (nt_sys_clk),
+            .D (counter_e_b[19]));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_CE /* \dis_reg_b[20]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \dis_reg_b[20]  (
+            .Q (dis_reg_b[20]),
+            .C (N0),
+            .CE (N290),
+            .CLK (nt_sys_clk),
+            .D (counter_e_b[20]));
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_C /* echo_a1 */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        echo_a1_vname (
+            .Q (echo_a1),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (nt_echo_a));
+    // defparam echo_a1_vname.orig_name = echo_a1;
+	// ../source/rtl/smart_car.v:270
+
+    GTP_DFF_C /* echo_a2 */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        echo_a2_vname (
+            .Q (echo_a2),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (echo_a1));
+    // defparam echo_a2_vname.orig_name = echo_a2;
+	// ../source/rtl/smart_car.v:270
+
+(* PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="F7", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* echo_a_ibuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        echo_a_ibuf (
+            .O (nt_echo_a),
+            .I (echo_a));
+	// ../source/rtl/smart_car.v:11
+
+    GTP_DFF_C /* echo_b1 */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        echo_b1_vname (
+            .Q (echo_b1),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (nt_echo_b));
+    // defparam echo_b1_vname.orig_name = echo_b1;
+	// ../source/rtl/smart_car.v:341
+
+    GTP_DFF_C /* echo_b2 */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        echo_b2_vname (
+            .Q (echo_b2),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (echo_b1));
+    // defparam echo_b2_vname.orig_name = echo_b2;
+	// ../source/rtl/smart_car.v:341
+
+(* PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="E5", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* echo_b_ibuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        echo_b_ibuf (
+            .O (nt_echo_b),
+            .I (echo_b));
+	// ../source/rtl/smart_car.v:12
+
+(* PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="D8", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* echo_en_n_ibuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        echo_en_n_ibuf (
+            .O (nt_echo_en_n),
+            .I (echo_en_n));
+	// ../source/rtl/smart_car.v:13
+
+(* PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="T13", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* en_ab_ibuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        en_ab_ibuf (
+            .O (nt_en_ab),
+            .I (en_ab));
+	// ../source/rtl/smart_car.v:16
+
+    GTP_DFF_CE /* \i[0]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \i[0]  (
+            .Q (i[0]),
+            .C (N0),
+            .CE (N361),
+            .CLK (nt_sys_clk),
+            .D (_N1202));
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_CE /* \i[1]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \i[1]  (
+            .Q (i[1]),
+            .C (N0),
+            .CE (N361),
+            .CLK (nt_sys_clk),
+            .D (_N1203));
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_CE /* \i[2]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \i[2]  (
+            .Q (i[2]),
+            .C (N0),
+            .CE (N361),
+            .CLK (nt_sys_clk),
+            .D (_N1204));
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_CE /* \i[3]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \i[3]  (
+            .Q (i[3]),
+            .C (N0),
+            .CE (N361),
+            .CLK (nt_sys_clk),
+            .D (_N1205));
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_CE /* \i[4]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \i[4]  (
+            .Q (i[4]),
+            .C (N0),
+            .CE (N361),
+            .CLK (nt_sys_clk),
+            .D (_N1206));
+	// ../source/rtl/smart_car.v:45
+
+(* PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="D4", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="4", PAP_IO_SLEW="SLOW" *)    GTP_OUTBUF /* l1_obuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        l1_obuf (
+            .O (l1),
+            .I (nt_l1));
+	// ../source/rtl/smart_car.v:20
+
+(* PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="C6", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="4", PAP_IO_SLEW="SLOW" *)    GTP_OUTBUF /* l2_obuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        l2_obuf (
+            .O (l2),
+            .I (nt_l2));
+	// ../source/rtl/smart_car.v:20
+
+(* PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="A5", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="4", PAP_IO_SLEW="SLOW" *)    GTP_OUTBUF /* l3_obuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        l3_obuf (
+            .O (l3),
+            .I (nt_l3));
+	// ../source/rtl/smart_car.v:20
+
+(* PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="D6", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="4", PAP_IO_SLEW="SLOW" *)    GTP_OUTBUF /* l4_obuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        l4_obuf (
+            .O (l4),
+            .I (nt_l4));
+	// ../source/rtl/smart_car.v:20
+
+    GTP_DLATCH /* \next_state_a[0]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \next_state_a[0]  (
+            .Q (next_state_a[0]),
+            .D (N283),
+            .G (N408));
+	// ../source/rtl/smart_car.v:266
+
+    GTP_DLATCH /* \next_state_a[1]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \next_state_a[1]  (
+            .Q (next_state_a[1]),
+            .D (N284),
+            .G (N408));
+	// ../source/rtl/smart_car.v:266
+
+    GTP_DLATCH /* \next_state_b[0]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \next_state_b[0]  (
+            .Q (next_state_b[0]),
+            .D (N288),
+            .G (N405));
+	// ../source/rtl/smart_car.v:337
+
+    GTP_DLATCH /* \next_state_b[1]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \next_state_b[1]  (
+            .Q (next_state_b[1]),
+            .D (N289),
+            .G (N405));
+	// ../source/rtl/smart_car.v:337
+
+    GTP_DFF_E /* nr_a */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        nr_a_vname (
+            .Q (nt_nr_a),
+            .CE (N223_0),
+            .CLK (nt_sys_clk),
+            .D (_N926));
+    // defparam nr_a_vname.orig_name = nr_a;
+	// ../source/rtl/smart_car.v:317
+
+    GTP_DFF_E /* nr_a_led */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        nr_a_led_vname (
+            .Q (nt_nr_a_led),
+            .CE (N223_0),
+            .CLK (nt_sys_clk),
+            .D (nt_nr_a));
+    // defparam nr_a_led_vname.orig_name = nr_a_led;
+	// ../source/rtl/smart_car.v:317
+
+(* PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="F3", PAP_IO_VCCIO="1.5", PAP_IO_STANDARD="LVCMOS15", PAP_IO_DRIVE="4", PAP_IO_SLEW="SLOW" *)    GTP_OUTBUF /* nr_a_led_obuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        nr_a_led_obuf (
+            .O (nr_a_led),
+            .I (nt_nr_a_led));
+	// ../source/rtl/smart_car.v:22
+
+(* PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="F8", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="4", PAP_IO_SLEW="SLOW" *)    GTP_OUTBUF /* nr_a_obuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        nr_a_obuf (
+            .O (nr_a),
+            .I (nt_nr_a));
+	// ../source/rtl/smart_car.v:22
+
+    GTP_DFF_E /* nr_b */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        nr_b_vname (
+            .Q (nt_nr_b),
+            .CE (N223_0),
+            .CLK (nt_sys_clk),
+            .D (_N928));
+    // defparam nr_b_vname.orig_name = nr_b;
+	// ../source/rtl/smart_car.v:389
+
+    GTP_DFF_E /* nr_b_led */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        nr_b_led_vname (
+            .Q (nt_nr_b_led),
+            .CE (N223_0),
+            .CLK (nt_sys_clk),
+            .D (nt_nr_b));
+    // defparam nr_b_led_vname.orig_name = nr_b_led;
+	// ../source/rtl/smart_car.v:389
+
+(* PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="J6", PAP_IO_VCCIO="1.5", PAP_IO_STANDARD="LVCMOS15", PAP_IO_DRIVE="4", PAP_IO_SLEW="SLOW" *)    GTP_OUTBUF /* nr_b_led_obuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        nr_b_led_obuf (
+            .O (nr_b_led),
+            .I (nt_nr_b_led));
+	// ../source/rtl/smart_car.v:23
+
+(* PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="E6", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="4", PAP_IO_SLEW="SLOW" *)    GTP_OUTBUF /* nr_b_obuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        nr_b_obuf (
+            .O (nr_b),
+            .I (nt_nr_b));
+	// ../source/rtl/smart_car.v:23
+
+(* PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="U10", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* p1_ibuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        p1_ibuf (
+            .O (nt_p1),
+            .I (p1));
+	// ../source/rtl/smart_car.v:15
+
+(* PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="R17", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* p2_ibuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        p2_ibuf (
+            .O (nt_p2),
+            .I (p2));
+	// ../source/rtl/smart_car.v:15
+
+(* PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="R18", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* p3_ibuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        p3_ibuf (
+            .O (nt_p3),
+            .I (p3));
+	// ../source/rtl/smart_car.v:15
+
+(* PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="R13", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="4", PAP_IO_SLEW="SLOW" *)    GTP_OUTBUF /* pwm1_obuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        pwm1_obuf (
+            .O (pwm1),
+            .I (nt_pwm1));
+	// ../source/rtl/smart_car.v:19
+
+(* PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="B6", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="4", PAP_IO_SLEW="SLOW" *)    GTP_OUTBUF /* pwm2_obuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        pwm2_obuf (
+            .O (pwm2),
+            .I (nt_pwm2));
+	// ../source/rtl/smart_car.v:19
+
+(* PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="B7", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="4", PAP_IO_SLEW="SLOW" *)    GTP_OUTBUF /* pwm3_obuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        pwm3_obuf (
+            .O (pwm3),
+            .I (nt_pwm3));
+	// ../source/rtl/smart_car.v:19
+
+(* PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="A8", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="4", PAP_IO_SLEW="SLOW" *)    GTP_OUTBUF /* pwm4_obuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        pwm4_obuf (
+            .O (pwm4),
+            .I (_N1103));
+	// ../source/rtl/smart_car.v:19
+
+    GTP_DLATCH_C /* pwm_ab_cp */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        pwm_ab_cp (
+            .Q (_N1500),
+            .C (N372),
+            .D (1'b1),
+            .G (N373));
+
+    GTP_LUT2 /* pwm_ab_mux */ #(
+            .INIT(4'b0010))
+        pwm_ab_mux (
+            .Z (_N1503),
+            .I0 (_N1500),
+            .I1 (_N1501));
+	// Z = I0&~I1 ;
+
+(* PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="P13", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="4", PAP_IO_SLEW="SLOW" *)    GTP_OUTBUF /* pwm_ab_obuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        pwm_ab_obuf (
+            .O (pwm_ab),
+            .I (_N1503));
+	// ../source/rtl/smart_car.v:18
+
+    GTP_DFF_C /* pwm_ab_sel */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        pwm_ab_sel (
+            .Q (_N1501),
+            .C (N373),
+            .CLK (nt_sys_clk),
+            .D (1'b1));
+
+    GTP_DFF_E /* \reg_rgb[8]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \reg_rgb[8]  (
+            .Q (reg_rgb[8]),
+            .CE (N367),
+            .CLK (nt_sys_clk),
+            .D (state_rgb_2_inv));
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_E /* \reg_rgb[16]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \reg_rgb[16]  (
+            .Q (reg_rgb[16]),
+            .CE (N367),
+            .CLK (nt_sys_clk),
+            .D (state_rgb_0_inv));
+	// ../source/rtl/smart_car.v:45
+
+(* PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="V16", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="4", PAP_IO_SLEW="SLOW" *)    GTP_OUTBUF /* rgb_p_obuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        rgb_p_obuf (
+            .O (rgb_p),
+            .I (_N1));
+	// ../source/rtl/smart_car.v:17
+
+    GTP_DFF_PE /* state_rgb_0 */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b1))
+        state_rgb_0_vname (
+            .Q (state_rgb_0),
+            .CE (_N1366),
+            .CLK (nt_sys_clk),
+            .D (_N11),
+            .P (N0));
+    // defparam state_rgb_0_vname.orig_name = state_rgb_0;
+	// ../source/rtl/smart_car.v:45
+
+    GTP_LUT1 /* state_rgb_0inv */ #(
+            .INIT(2'b01))
+        state_rgb_0inv (
+            .Z (state_rgb_0_inv),
+            .I0 (state_rgb_0));
+	// Z = ~I0 ;
+
+    GTP_DFF_CE /* state_rgb_1 */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        state_rgb_1_vname (
+            .Q (state_rgb_1),
+            .C (N0),
+            .CE (_N1366),
+            .CLK (nt_sys_clk),
+            .D (_N7));
+    // defparam state_rgb_1_vname.orig_name = state_rgb_1;
+	// ../source/rtl/smart_car.v:45
+
+    GTP_DFF_CE /* state_rgb_2 */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        state_rgb_2_vname (
+            .Q (state_rgb_2),
+            .C (N0),
+            .CE (_N1366),
+            .CLK (nt_sys_clk),
+            .D (_N10));
+    // defparam state_rgb_2_vname.orig_name = state_rgb_2;
+	// ../source/rtl/smart_car.v:45
+
+    GTP_LUT3 /* \state_rgb[2:0]_fsm[2:0]_6  */ #(
+            .INIT(8'b11001000))
+        \state_rgb[2:0]_fsm[2:0]_6  (
+            .Z (_N7),
+            .I0 (state_rgb_0),
+            .I1 (nt_echo_en_n),
+            .I2 (state_rgb_2));
+	// Z = (I0&I1)|(I1&I2) ;
+	// ../source/rtl/smart_car.v:45
+
+    GTP_LUT4 /* \state_rgb[2:0]_fsm[2:0]_11  */ #(
+            .INIT(16'b0000110000001000))
+        \state_rgb[2:0]_fsm[2:0]_11  (
+            .Z (_N10),
+            .I0 (state_rgb_0),
+            .I1 (N32),
+            .I2 (nt_echo_en_n),
+            .I3 (state_rgb_1));
+	// Z = (I0&I1&~I2)|(I1&~I2&I3) ;
+
+    GTP_LUT4 /* \state_rgb[2:0]_fsm[2:0]_16  */ #(
+            .INIT(16'b0000001100000010))
+        \state_rgb[2:0]_fsm[2:0]_16  (
+            .Z (_N11),
+            .I0 (state_rgb_1),
+            .I1 (N32),
+            .I2 (nt_echo_en_n),
+            .I3 (state_rgb_2));
+	// Z = (I0&~I1&~I2)|(~I1&~I2&I3) ;
+
+    GTP_LUT1 /* state_rgb_2inv */ #(
+            .INIT(2'b01))
+        state_rgb_2inv (
+            .Z (state_rgb_2_inv),
+            .I0 (state_rgb_2));
+	// Z = ~I0 ;
+
+(* PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="B5", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_PULLUP="TRUE" *)    GTP_INBUF /* sys_clk_ibuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        sys_clk_ibuf (
+            .O (nt_sys_clk),
+            .I (sys_clk));
+	// ../source/rtl/smart_car.v:9
+
+(* PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="G5", PAP_IO_VCCIO="1.5", PAP_IO_STANDARD="LVCMOS15", PAP_IO_PULLUP="TRUE" *)    GTP_INBUF /* sys_rst_n_ibuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        sys_rst_n_ibuf (
+            .O (nt_sys_rst_n),
+            .I (sys_rst_n));
+	// ../source/rtl/smart_car.v:10
+
+    GTP_DFF_C /* trig */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        trig_vname (
+            .Q (nt_trig),
+            .C (N0),
+            .CLK (nt_sys_clk),
+            .D (_N924));
+    // defparam trig_vname.orig_name = trig;
+	// ../source/rtl/smart_car.v:248
+
+(* PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="E7", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVTTL33", PAP_IO_DRIVE="4", PAP_IO_SLEW="SLOW" *)    GTP_OUTBUF /* trig_obuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        trig_obuf (
+            .O (trig),
+            .I (nt_trig));
+	// ../source/rtl/smart_car.v:21
+
+
+endmodule
+

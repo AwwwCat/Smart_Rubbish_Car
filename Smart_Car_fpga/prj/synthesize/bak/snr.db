@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tables>
+    <table id="synthesize_resource_utilization" title="Resource Utilization By Entity" column_number="26" tree="">
+        <column_headers>
+            <data>Module Inst Name</data>
+            <data>LUT</data>
+            <data>FF</data>
+            <data>ADC</data>
+            <data>APM</data>
+            <data>CRYSTAL</data>
+            <data>DLL</data>
+            <data>DQSL</data>
+            <data>DRM</data>
+            <data>FLSIF</data>
+            <data>FUSECODE</data>
+            <data>HMEMC</data>
+            <data>HSST</data>
+            <data>IO</data>
+            <data>IOCKDIV</data>
+            <data>IOCKDLY</data>
+            <data>IOCKGATE</data>
+            <data>IPAL</data>
+            <data>Distributed RAM</data>
+            <data>PLL</data>
+            <data>RCKB</data>
+            <data>RESCAL</data>
+            <data>SCANCHAIN</data>
+            <data>START</data>
+            <data>UDID</data>
+            <data>USCM</data>
+        </column_headers>
+        <row>
+            <data>smart_car</data>
+            <data>344</data>
+            <data>179</data>
+            <data>0</data>
+            <data>0</data>
+            <data>0</data>
+            <data>0</data>
+            <data>0</data>
+            <data>0</data>
+            <data>0</data>
+            <data>0</data>
+            <data>0</data>
+            <data>0</data>
+            <data>26</data>
+            <data>0</data>
+            <data>0</data>
+            <data>0</data>
+            <data>0</data>
+            <data>0</data>
+            <data>0</data>
+            <data>0</data>
+            <data>0</data>
+            <data>0</data>
+            <data>1</data>
+            <data>0</data>
+            <data>0</data>
+        </row>
+    </table>
+    <table id="synthesize_resource_usage" title="GTP Usage" column_number="2">
+        <column_headers>
+            <data>GTP Name</data>
+            <data>Usage</data>
+        </column_headers>
+        <comment>
+            <data>
+Total LUTs: 339 of 17536 (1.93%)
+	LUTs as dram: 0 of 4440 (0.00%)
+	LUTs as logic: 339
+Total Registers: 179 of 26304 (0.68%)
+Total Latches: 5
+
+DRM18K:
+Total DRM18K = 0.0 of 48 (0.00%)
+
+APMs:
+Total APMs = 0.00 of 30 (0.00%)
+
+Total I/O ports = 26 of 240 (10.83%)
+</data>
+        </comment>
+        <row>
+            <data>GTP_DFF_C</data>
+            <data>53</data>
+        </row>
+        <row>
+            <data>GTP_DFF_CE</data>
+            <data>119</data>
+        </row>
+        <row>
+            <data>GTP_DFF_E</data>
+            <data>6</data>
+        </row>
+        <row>
+            <data>GTP_DFF_PE</data>
+            <data>1</data>
+        </row>
+        <row>
+            <data>GTP_DLATCH</data>
+            <data>4</data>
+        </row>
+        <row>
+            <data>GTP_DLATCH_C</data>
+            <data>1</data>
+        </row>
+        <row>
+            <data>GTP_GRS</data>
+            <data>1</data>
+        </row>
+        <row>
+            <data>GTP_INV</data>
+            <data>2</data>
+        </row>
+        <row>
+            <data>GTP_LUT1</data>
+            <data>3</data>
+        </row>
+        <row>
+            <data>GTP_LUT2</data>
+            <data>122</data>
+        </row>
+        <row>
+            <data>GTP_LUT3</data>
+            <data>11</data>
+        </row>
+        <row>
+            <data>GTP_LUT4</data>
+            <data>31</data>
+        </row>
+        <row>
+            <data>GTP_LUT5</data>
+            <data>59</data>
+        </row>
+        <row>
+            <data>GTP_LUT5CARRY</data>
+            <data>113</data>
+        </row>
+        <row>
+            <data>GTP_MUX2LUT6</data>
+            <data>5</data>
+        </row>
+        <row>
+            <data>GTP_INBUF</data>
+            <data>11</data>
+        </row>
+        <row>
+            <data>GTP_OUTBUF</data>
+            <data>15</data>
+        </row>
+    </table>
+    <table id="synthesize_performance" title="Performance Summary:" column_number="6">
+        <column_headers>
+            <data>Clock</data>
+            <data>Requested Frequency</data>
+            <data>Estimated Frequency</data>
+            <data>Requested Period</data>
+            <data>Estimated Period</data>
+            <data>Slack</data>
+        </column_headers>
+        <row>
+            <data>sys_clk_Inferred</data>
+            <data>1.000 MHz</data>
+            <data>183.688 MHz</data>
+            <data>1000.000</data>
+            <data>5.444</data>
+            <data>994.556</data>
+        </row>
+    </table>
+    <table id="synthesize_ads_clock_groups" title="Clock Groups:" column_number="3">
+        <column_headers>
+            <data>Clock Group</data>
+            <data>Group Type</data>
+            <data>clocks</data>
+        </column_headers>
+        <row>
+            <data>Inferred_clock_group</data>
+            <data>asynchronous</data>
+            <data>sys_clk_Inferred</data>
+        </row>
+    </table>
+    <table id="synthesize_constraint_files" title="Constraint Files Read" column_number="2">
+        <column_headers>
+            <data>File Name</data>
+            <data>File Type</data>
+        </column_headers>
+        <row>
+            <data>D:/VERILOG/smart_car/prj/source/source/smart_car.fdc</data>
+            <data>fdc</data>
+        </row>
+    </table>
+    <table id="synthesize_runtime" title="Synthesize Runtime &amp; Memory" column_number="3">
+        <column_headers>
+            <data>Cpu Time (s)</data>
+            <data>Real Time (s)</data>
+            <data>Peak Memory (B)</data>
+        </column_headers>
+        <row>
+            <data>7.53125</data>
+            <data>9</data>
+            <data>236,056,576</data>
+        </row>
+    </table>
+    <table id="synthesize_messages" title="Synthesize Messages" column_number="1">
+        <column_headers/>
+        <row>
+            <data color="4278190080" align="0" message="6" bold="0">ConstraintEditor-2002: [D:/VERILOG/smart_car/prj/source/source/smart_car.fdc(line number: 68)] | Port a has been placed at location C8, whose type is share pin.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="6" bold="0">ConstraintEditor-2002: [D:/VERILOG/smart_car/prj/source/source/smart_car.fdc(line number: 72)] | Port b has been placed at location E8, whose type is share pin.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="6" bold="0">ConstraintEditor-2002: [D:/VERILOG/smart_car/prj/source/source/smart_car.fdc(line number: 88)] | Port echo_en_n has been placed at location D8, whose type is share pin.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Encoding type of FSM 'state_rgb[2:0]_fsm[2:0]' is: onehot.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Encoding table of FSM 'state_rgb[2:0]_fsm[2:0]':</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">from  state_rgb[2] state_rgb[1] state_rgb[0]</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">to  state_rgb_2 state_rgb_1 state_rgb_0</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">000 =&gt; 001</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">001 =&gt; 010</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">010 =&gt; 100</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Constant propagation done on N22_bc0 (bmsREDAND).</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Constant propagation done on N103_sum2 (bmsREDXOR).</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Constant propagation done on N103_ab2 (bmsREDAND).</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Constant propagation done on N103_ac2 (bmsREDAND).</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Constant propagation done on N103_sum4 (bmsREDXOR).</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Constant propagation done on N22_sum0 (bmsREDXOR).</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Constant propagation done on N22_ab0 (bmsREDAND).</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Constant propagation done on N103_ac1 (bmsREDAND).</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Constant propagation done on N103_maj0 (bmsREDXOR).</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Constant propagation done on N103_ab0 (bmsREDAND).</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Removed inst reg_rgb[2] that is redundant to reg_rgb[1] (type GTP_DFF_E)</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Removed inst reg_rgb[3] that is redundant to reg_rgb[1] (type GTP_DFF_E)</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Removed inst reg_rgb[4] that is redundant to reg_rgb[1] (type GTP_DFF_E)</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Removed inst reg_rgb[5] that is redundant to reg_rgb[1] (type GTP_DFF_E)</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Removed inst reg_rgb[6] that is redundant to reg_rgb[1] (type GTP_DFF_E)</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Removed inst reg_rgb[7] that is redundant to reg_rgb[1] (type GTP_DFF_E)</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Removed inst reg_rgb[1] that is redundant to reg_rgb[0] (type GTP_DFF_E)</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Removed inst reg_rgb[17] that is redundant to reg_rgb[16] (type GTP_DFF_E)</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Removed inst reg_rgb[18] that is redundant to reg_rgb[16] (type GTP_DFF_E)</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Removed inst reg_rgb[19] that is redundant to reg_rgb[16] (type GTP_DFF_E)</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Removed inst reg_rgb[20] that is redundant to reg_rgb[16] (type GTP_DFF_E)</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Removed inst reg_rgb[21] that is redundant to reg_rgb[16] (type GTP_DFF_E)</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Removed inst reg_rgb[22] that is redundant to reg_rgb[16] (type GTP_DFF_E)</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Removed inst reg_rgb[23] that is redundant to reg_rgb[16] (type GTP_DFF_E)</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Removed inst reg_rgb[9] that is redundant to reg_rgb[8] (type GTP_DFF_E)</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Removed inst reg_rgb[10] that is redundant to reg_rgb[8] (type GTP_DFF_E)</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Removed inst reg_rgb[11] that is redundant to reg_rgb[8] (type GTP_DFF_E)</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Removed inst reg_rgb[12] that is redundant to reg_rgb[8] (type GTP_DFF_E)</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Removed inst reg_rgb[13] that is redundant to reg_rgb[8] (type GTP_DFF_E)</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Removed inst reg_rgb[14] that is redundant to reg_rgb[8] (type GTP_DFF_E)</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="4" bold="0">Removed inst reg_rgb[15] that is redundant to reg_rgb[8] (type GTP_DFF_E)</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="6" bold="0">STA-3011: Clock pin 'next_state_a[0]/G' (GTP_DLATCH.G) has no clock, timing propagation is disabled at the pin.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="6" bold="0">STA-3011: Clock pin 'next_state_a[1]/G' (GTP_DLATCH.G) has no clock, timing propagation is disabled at the pin.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="6" bold="0">STA-3011: Clock pin 'next_state_b[0]/G' (GTP_DLATCH.G) has no clock, timing propagation is disabled at the pin.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="6" bold="0">STA-3011: Clock pin 'next_state_b[1]/G' (GTP_DLATCH.G) has no clock, timing propagation is disabled at the pin.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="6" bold="0">STA-3011: Clock pin 'pwm_ab_cp/G' (GTP_DLATCH_C.G) has no clock, timing propagation is disabled at the pin.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="5" bold="0">Timing-4087: Port 'l1' is not constrained, it is treated as combinational output.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="5" bold="0">Timing-4087: Port 'l2' is not constrained, it is treated as combinational output.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="5" bold="0">Timing-4087: Port 'l3' is not constrained, it is treated as combinational output.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="5" bold="0">Timing-4087: Port 'l4' is not constrained, it is treated as combinational output.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="5" bold="0">Timing-4087: Port 'nr_a' is not constrained, it is treated as combinational output.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="5" bold="0">Timing-4087: Port 'nr_a_led' is not constrained, it is treated as combinational output.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="5" bold="0">Timing-4087: Port 'nr_b' is not constrained, it is treated as combinational output.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="5" bold="0">Timing-4087: Port 'nr_b_led' is not constrained, it is treated as combinational output.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="5" bold="0">Timing-4087: Port 'pwm1' is not constrained, it is treated as combinational output.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="5" bold="0">Timing-4087: Port 'pwm2' is not constrained, it is treated as combinational output.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="5" bold="0">Timing-4087: Port 'pwm3' is not constrained, it is treated as combinational output.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="5" bold="0">Timing-4087: Port 'pwm4' is not constrained, it is treated as combinational output.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="5" bold="0">Timing-4087: Port 'pwm_ab' is not constrained, it is treated as combinational output.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="5" bold="0">Timing-4087: Port 'rgb_p' is not constrained, it is treated as combinational output.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="5" bold="0">Timing-4087: Port 'trig' is not constrained, it is treated as combinational output.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="5" bold="0">Timing-4086: Port 'a' is not constrained, it is treated as combinational input.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="5" bold="0">Timing-4086: Port 'b' is not constrained, it is treated as combinational input.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="5" bold="0">Timing-4086: Port 'echo_a' is not constrained, it is treated as combinational input.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="5" bold="0">Timing-4086: Port 'echo_b' is not constrained, it is treated as combinational input.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="5" bold="0">Timing-4086: Port 'echo_en_n' is not constrained, it is treated as combinational input.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="5" bold="0">Timing-4086: Port 'en_ab' is not constrained, it is treated as combinational input.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="5" bold="0">Timing-4086: Port 'p1' is not constrained, it is treated as combinational input.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="5" bold="0">Timing-4086: Port 'p2' is not constrained, it is treated as combinational input.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="5" bold="0">Timing-4086: Port 'p3' is not constrained, it is treated as combinational input.</data>
+        </row>
+        <row>
+            <data color="4278190080" align="0" message="5" bold="0">Timing-4086: Port 'sys_rst_n' is not constrained, it is treated as combinational input.</data>
+        </row>
+    </table>
+    <general_container id="synthesize_settings" align="1">
+        <table_container>
+            <table id="synthesize_settings" title="Synthesize Settings" column_number="2">
+                <column_headers>
+                    <data>Name</data>
+                    <data>Value</data>
+                </column_headers>
+                <row>
+                    <data>Part</data>
+                    <data>PGL22G-6MBG324</data>
+                </row>
+                <row>
+                    <data>Top Module</data>
+                    <data>smart_car</data>
+                </row>
+            </table>
+        </table_container>
+        <general_container align="3">
+            <table_container>
+                <data>Option</data>
+                <table id="" title="" column_number="2">
+                    <column_headers>
+                        <data>Name</data>
+                        <data>Value</data>
+                    </column_headers>
+                    <row>
+                        <data>Fanout Guide</data>
+                        <data>10000</data>
+                    </row>
+                    <row>
+                        <data>Disable I/O Insertion</data>
+                        <data>OFF</data>
+                    </row>
+                    <row>
+                        <data>Enable Advanced LUT Combining</data>
+                        <data>TRUE</data>
+                    </row>
+                    <row>
+                        <data>Automatic Read/Write Check Insertion for RAM</data>
+                        <data>OFF</data>
+                    </row>
+                    <row>
+                        <data>Resource Sharing</data>
+                        <data>TRUE</data>
+                    </row>
+                    <row>
+                        <data>Retiming</data>
+                        <data>OFF</data>
+                    </row>
+                    <row>
+                        <data>Minimum Control-set Size</data>
+                        <data>2</data>
+                    </row>
+                </table>
+            </table_container>
+            <table_container>
+                <data>Timing</data>
+                <table id="" title="" column_number="2">
+                    <column_headers>
+                        <data>Name</data>
+                        <data>Value</data>
+                    </column_headers>
+                    <row>
+                        <data>Total Number of Paths (-max_path)</data>
+                        <data>3</data>
+                    </row>
+                    <row>
+                        <data>Number of Paths per Endpoint (-nworst)</data>
+                        <data>1</data>
+                    </row>
+                    <row>
+                        <data>Enable infer clock</data>
+                        <data>TRUE</data>
+                    </row>
+                    <row>
+                        <data>Default clock frequency (Mhz)</data>
+                        <data>1</data>
+                    </row>
+                </table>
+            </table_container>
+        </general_container>
+    </general_container>
+</tables>

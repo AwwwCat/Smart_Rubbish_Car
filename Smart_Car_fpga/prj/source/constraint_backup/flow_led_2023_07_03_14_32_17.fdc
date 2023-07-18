@@ -1,0 +1,21 @@
+#------------------------------系统时钟-----------------------------------
+define_attribute {p:sys_clk} {PAP_IO_DIRECTION} {INPUT}
+define_attribute {p:sys_clk} {PAP_IO_LOC} {B5}
+define_attribute {p:sys_clk} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:sys_clk} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:sys_clk} {PAP_IO_PULLUP} {TRUE}
+
+#------------------------------复位按键-----------------------------------
+define_attribute {p:sys_rst_n} {PAP_IO_DIRECTION} {INPUT}
+define_attribute {p:sys_rst_n} {PAP_IO_LOC} {G5}
+define_attribute {p:sys_rst_n} {PAP_IO_VCCIO} {1.5}
+define_attribute {p:sys_rst_n} {PAP_IO_STANDARD} {LVCMOS15}
+define_attribute {p:sys_rst_n} {PAP_IO_PULLUP} {TRUE}
+
+#-----------------------------------LED-----------------------------------------
+define_attribute {p:led} {PAP_IO_DIRECTION} {OUTPUT}
+define_attribute {p:led} {PAP_IO_LOC} {F3}
+define_attribute {p:led} {PAP_IO_VCCIO} {1.5}
+define_attribute {p:led} {PAP_IO_STANDARD} {LVCMOS15}
+define_attribute {p:led} {PAP_IO_DRIVE} {4}
+define_attribute {p:led} {PAP_IO_SLEW} {SLOW}
