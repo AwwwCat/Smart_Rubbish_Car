@@ -24,7 +24,7 @@
 ### 使用方法
 将`Smart_Car_ch32v`用 **MounRiver Studio** 打开，编译烧录至 **赤菟开发板**；将`Smart_Car_fpga`用 **Pango Design Suite** 打开，编译烧录至 **PGL22G**。
 
-## 代码说明
+## 文件说明
 ### Smart_Car_ch32v  
 > Smart_Car_ch32v  
 >> User  
@@ -37,6 +37,14 @@
 > Smart_Car_fpga
 >> prj  
 >> rtl  
->>> smart_car.v  
+>>> smart_car.v
 
+## 代码原理简述
 
+## 其他
+### 作者
+* [AwwwCat](https://github.com/AwwwCat)
+* 
+
+### 说明
+欢迎参考使用或提出建议，**禁止**使用此项目参加**相似竞赛**或**牟利性活动**。
