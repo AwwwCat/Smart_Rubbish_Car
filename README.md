@@ -28,16 +28,18 @@
 ### Smart_Car_ch32v  
 > Smart_Car_ch32v  
 >> User  
->>> car.c  
->>> lcd.c  
->>> arm.c  
->>> main.c  
+>>> car.c  小车行为代码
+>>> lcd.c  lcd显示屏代码
+>>> arm.c  机械臂代码
+>>> main.c  主代码
   
 ### Smart_Car_fpga  
 > Smart_Car_fpga
->> prj  
+>> prj
+>>> sourse
+>>>> smart_car.fdc  引脚分配文件
 >> rtl  
->>> smart_car.v
+>>> smart_car.v  verilog文件
 
 ## 代码原理简述
 
