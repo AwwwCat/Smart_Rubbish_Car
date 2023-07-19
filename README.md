@@ -43,8 +43,8 @@
 
 ## 其他
 ### 作者
-* [AwwwCat](https://github.com/AwwwCat)
-* [jixieer](https://github.com/jixieer)
+* [AwwwCat](https://github.com/AwwwCat)    主要进行ch32v30x和OpenMV的编写
+* [jixieer](https://github.com/jixieer)    主要进行FPGA的编写和电路设计
 
 ### 许可
 允许他人使用、修改、复制和分发你的代码，甚至可以用于商业用途。代码可以被私有化和闭源，只要包含版权声明和许可证条件即可。
