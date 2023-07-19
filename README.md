@@ -44,7 +44,7 @@
 ## 其他
 ### 作者
 * [AwwwCat](https://github.com/AwwwCat)
-* 
+* [jixieer](https://github.com/jixieer)
 
 ### 说明
 欢迎参考使用或提出建议，**禁止**使用此项目参加**相似竞赛**或**牟利性活动**。
