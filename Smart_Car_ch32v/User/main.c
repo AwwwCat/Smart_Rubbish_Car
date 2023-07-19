@@ -575,10 +575,10 @@ int main(void)
                 switch (refuse)                             // ½«×Ö·û´®·â×°½øbuffer_s
                 {
                     case 1:
-                        str_Package("Classification:    red\r\n");
+                        str_Package("Classification:  brown\r\n");
                         break;
                     case 2:
-                        str_Package("Classification:  green\r\n");
+                        str_Package("Classification:  white\r\n");
                         break;
                     default:
                         str_Package("Classification:  other\r\n");
