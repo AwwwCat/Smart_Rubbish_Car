@@ -1,5 +1,12 @@
 # Smart_Rubbish_Car
 “全国大学生嵌入式芯片与系统设计竞赛”参赛作品项目————智能垃圾车。
+## 目录
+1. [项目介绍](https://github.com/AwwwCat/Smart_Rubbish_Car/edit/master/README.md#%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D)
+2. [所用配件](https://github.com/AwwwCat/Smart_Rubbish_Car/edit/master/README.md#%E6%89%80%E7%94%A8%E9%85%8D%E4%BB%B6)
+3. [项目说明](https://github.com/AwwwCat/Smart_Rubbish_Car/edit/master/README.md#%E9%A1%B9%E7%9B%AE%E8%AF%B4%E6%98%8E)
+4. [文件说明](https://github.com/AwwwCat/Smart_Rubbish_Car/edit/master/README.md#%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E)
+5. [部分代码原理简述](https://github.com/AwwwCat/Smart_Rubbish_Car/edit/master/README.md#%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E)
+6. [其他](https://github.com/AwwwCat/Smart_Rubbish_Car/edit/master/README.md#%E5%85%B6%E4%BB%96)
 
 ## 项目介绍
 据相关研究以及调查表明，全球每年烟头垃圾有28亿升，全球每年塑料瓶消费量达5000亿个……可见，街头垃圾量不容小觑，为此，本队参赛设计为一台智能垃圾收集车。其能够在公园、学校、商场等场所进行自动垃圾收集活动。其搭载的摄像头能够识别一定类型的垃圾，可以进行分类并收集。小车能够直行或拐弯。搭载了超声波测距模块，且拥有基本的寻路算法和系统，能够在正常运行中将沿路边行走并能及时避障，若在一定范围内识别到垃圾，将前往收集，收集后返回路边并继续前行。车顶装载有车灯，当正常运行时车灯将正常显示，若发现有垃圾需要收集，将进行相应的颜色变化，提醒路人小心不要碰撞。
@@ -26,22 +33,39 @@
 
 ## 文件说明
 ### Smart_Car_ch32v  
-> Smart_Car_ch32v  
->> User  
->>> car.c  小车行为代码  
->>> lcd.c  lcd显示屏代码  
->>> arm.c  机械臂代码  
->>> main.c  主代码  
+ 
+#### User  
+car.c  小车行为代码  
+lcd.c  lcd显示屏代码  
+arm.c  机械臂代码  
+main.c  主代码  
   
 ### Smart_Car_fpga  
-> Smart_Car_fpga  
->> prj  
->>> sourse  
->>>> smart_car.fdc  引脚分配文件  
->> rtl  
->>> smart_car.v  verilog文件  
+#### prj  
+##### sourse  
+smart_car.fdc  引脚分配文件
 
-## 代码原理简述
+#### rtl  
+smart_car.v  verilog文件  
+
+## 部分代码原理简述
+```
+u8 pick = High_Level_Measure();                 // 获取高电平，若有垃圾则则接收到高电平，反之为0
+if (pick != 0)                                  // 若不为0，则有垃圾
+{
+    Echo_Switch(Close);
+    u16 angle = 0;
+    while (!angle)                              // 当角度为零，即未接收到角度信号时，再次接收
+        angle = Angle_Measure();
+    Turn_Angle(angle);
+    u16 distance = 0;
+    while (!distance)                           // 当距离为零，即未接收到距离信号时，再次接收
+        distance = Distance_Measure();
+    u8 refuse = Refuse_Classification();        // 获取分类信息
+...
+```
+摄像头检测到阈值高于0.85的物体时，发出一段高电平，单片机识别到高电平进入拾取模式，关闭超声波模块并等待角度信号。摄像头会发送一段高电平，高电平时长代表小车需要旋转的角度，10us代表一度。接收到角度信号后小车旋转并等待距离信号，摄像头会在一段时间后发送距离信号，高电平时长代表小车需要行走的距离，10us代表1cm。同时摄像头将发送垃圾信息并用单片机接收。
+> 垃圾信息可以同样通过高电平时长分类，但由于演示为两类垃圾，所以仅使用高低电平进行区分。
 
 ## 其他
 ### 作者
