@@ -37,7 +37,7 @@
 > Smart_Car_fpga  
 >> prj  
 >>> sourse  
->>>> smart_car.fdc  引脚分配文件
+>>>> smart_car.fdc  引脚分配文件  
 >> rtl  
 >>> smart_car.v  verilog文件  
 
