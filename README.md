@@ -1,12 +1,12 @@
 # Smart_Rubbish_Car
 “全国大学生嵌入式芯片与系统设计竞赛”参赛作品项目————智能垃圾车。
 ## 目录
-1. [项目介绍](https://github.com/AwwwCat/Smart_Rubbish_Car/edit/master/README.md#%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D)
-2. [所用配件](https://github.com/AwwwCat/Smart_Rubbish_Car/edit/master/README.md#%E6%89%80%E7%94%A8%E9%85%8D%E4%BB%B6)
-3. [项目说明](https://github.com/AwwwCat/Smart_Rubbish_Car/edit/master/README.md#%E9%A1%B9%E7%9B%AE%E8%AF%B4%E6%98%8E)
-4. [文件说明](https://github.com/AwwwCat/Smart_Rubbish_Car/edit/master/README.md#%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E)
-5. [部分代码原理简述](https://github.com/AwwwCat/Smart_Rubbish_Car/edit/master/README.md#%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E)
-6. [其他](https://github.com/AwwwCat/Smart_Rubbish_Car/edit/master/README.md#%E5%85%B6%E4%BB%96)
+1. [项目介绍](https://github.com/AwwwCat/Smart_Rubbish_Car/blob/master/README.md#%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D)
+2. [所用配件](https://github.com/AwwwCat/Smart_Rubbish_Car/blob/master/README.md#%E6%89%80%E7%94%A8%E9%85%8D%E4%BB%B6)
+3. [项目说明](https://github.com/AwwwCat/Smart_Rubbish_Car/blob/master/README.md#%E9%A1%B9%E7%9B%AE%E8%AF%B4%E6%98%8E)
+4. [文件说明](https://github.com/AwwwCat/Smart_Rubbish_Car/blob/master/README.md#%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E)
+5. [部分代码原理简述](https://github.com/AwwwCat/Smart_Rubbish_Car/blob/master/README.md#%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E)
+6. [其他](https://github.com/AwwwCat/Smart_Rubbish_Car/blob/master/README.md#%E5%85%B6%E4%BB%96)
 
 ## 项目介绍
 据相关研究以及调查表明，全球每年烟头垃圾有28亿升，全球每年塑料瓶消费量达5000亿个……可见，街头垃圾量不容小觑，为此，本队参赛设计为一台智能垃圾收集车。其能够在公园、学校、商场等场所进行自动垃圾收集活动。其搭载的摄像头能够识别一定类型的垃圾，可以进行分类并收集。小车能够直行或拐弯。搭载了超声波测距模块，且拥有基本的寻路算法和系统，能够在正常运行中将沿路边行走并能及时避障，若在一定范围内识别到垃圾，将前往收集，收集后返回路边并继续前行。车顶装载有车灯，当正常运行时车灯将正常显示，若发现有垃圾需要收集，将进行相应的颜色变化，提醒路人小心不要碰撞。
