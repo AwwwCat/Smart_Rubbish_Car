@@ -4,7 +4,7 @@
 1. [项目介绍](https://github.com/AwwwCat/Smart_Rubbish_Car/blob/master/README.md#%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D)
 2. [所用配件](https://github.com/AwwwCat/Smart_Rubbish_Car/blob/master/README.md#%E6%89%80%E7%94%A8%E9%85%8D%E4%BB%B6)
 3. [项目说明](https://github.com/AwwwCat/Smart_Rubbish_Car/blob/master/README.md#%E9%A1%B9%E7%9B%AE%E8%AF%B4%E6%98%8E)
-4. [主要文件说明](https://github.com/AwwwCat/Smart_Rubbish_Car/blob/master/README.md#%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E)
+4. [主要文件说明](https://github.com/AwwwCat/Smart_Rubbish_Car/blob/master/README.md#%E4%B8%BB%E8%A6%81%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E)
 5. [部分代码原理简述](https://github.com/AwwwCat/Smart_Rubbish_Car/blob/master/README.md#%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E)
 6. [其他](https://github.com/AwwwCat/Smart_Rubbish_Car/blob/master/README.md#%E5%85%B6%E4%BB%96)
 
