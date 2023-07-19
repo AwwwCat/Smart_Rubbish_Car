@@ -40,10 +40,10 @@
 * main.c  主代码  
   
 ### Smart_Car_fpga  
-#### Smart_Car_fpga\prj\sourse   
+#### Smart_Car_fpga/prj/sourse   
 * smart_car.fdc  引脚分配文件
 
-#### Smart_Car_fpga\rtl  
+#### Smart_Car_fpga/rtl  
 * smart_car.v  verilog文件 
 
 ### OpenMV
