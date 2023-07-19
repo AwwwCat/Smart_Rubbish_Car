@@ -7,6 +7,8 @@
 *******************************************************************/
 #include "debug.h"// 包含 CH32V307 的头文件，C 标准单元库和delay()函数
 #include "lcd.h"
+#include "arm.h"
+#include "car.h"
 #include <string.h>
 #include <stdarg.h>
 
@@ -16,13 +18,6 @@
 #define TURNDELAY 500       // 旋转延迟
 #define MECHINEARMTIME 1000 // 机械臂运动间隔
 
-
-/* 钳子开关模式枚举 */
-enum PLIER {Open, Close} Plier;
-
-/* 机械臂状态枚举 */
-enum ARM {Low, Stay, Put1, Put2} Arm;
-
 /* PWM 输出模式定义 */
 #define PWM_MODE1   0
 #define PWM_MODE2   1
@@ -30,7 +25,7 @@ enum ARM {Low, Stay, Put1, Put2} Arm;
 /* 全局数据 */
 u8 TxBuffer[] = " ";
 u8 RxBuffer[RXBUF_SIZE]={0};
-u16 TURNTIME = 1250;        // 旋转90度需要的延迟
+u16 TURNTIME = 1600;        // 旋转90度需要的延迟
 u16 RUNTIME = 2500;         // 行走1米需要的延迟
 u16 EACHCHANGE = 100;       // 每次变化的延迟
 u16 GLOBALSWITCH = 0;       // 小车控制的全局开关
@@ -416,249 +411,6 @@ void GPIO_INIT(void)
 
 
 /********************************************************************
-* 函数名称      : Car_Run
-* 函数功能      : 小车停止
-* 输       入      : 无
-* 输       出      : 无
-*********************************************************************/
-void Car_Run()
-{
-    GPIO_WriteBit(GPIOE, GPIO_Pin_12, 0);       // 灯亮
-    GPIO_WriteBit(GPIOD, GPIO_Pin_8, 1);
-}
-
-
-
-/********************************************************************
-* 函数名称      : Car_Stop
-* 函数功能      : 小车停止
-* 输       入      : 无
-* 输       出      : 无
-*********************************************************************/
-void Car_Stop()
-{
-    GPIO_WriteBit(GPIOE, GPIO_Pin_12, 1);       // 灯灭
-    GPIO_WriteBit(GPIOD, GPIO_Pin_8, 0);
-}
-
-
-
-/********************************************************************
-* 函数名称      : Car_Front_Run
-* 函数功能      : 小车前进
-* 输       入      : u32 ms           信号变化与小车运动间的延迟
-* 输       出      : 无
-*********************************************************************/
-void Car_Front_Run(u32 ms)
-{
-    Car_Stop();
-    Delay_Ms(ms);
-    GPIO_WriteBit(GPIOE, GPIO_Pin_13, 0);
-    GPIO_WriteBit(GPIOE, GPIO_Pin_14, 0);       // 00为前进信号
-    Delay_Ms(ms);
-    Car_Run();
-}
-
-
-
-/********************************************************************
-* 函数名称      : Car_Back_Run
-* 函数功能      : 小车后退
-* 输       入      : u32 ms           信号变化与小车运动间的延迟
-* 输       出      : 无
-*********************************************************************/
-void Car_Back_Run(u32 ms)
-{
-    Car_Stop();
-    Delay_Ms(ms);
-    GPIO_WriteBit(GPIOE, GPIO_Pin_13, 0);
-    GPIO_WriteBit(GPIOE, GPIO_Pin_14, 1);       // 01为后退信号
-    Delay_Ms(ms);
-    Car_Run();
-}
-
-
-
-/********************************************************************
-* 函数名称      : Car_Turn_Right
-* 函数功能      : 小车原地右转
-* 输       入      : u32 ms           信号变化与小车运动间的延迟
-* 输       出      : 无
-*********************************************************************/
-void Car_Turn_Right(u32 ms)
-{
-    Car_Stop();
-    Delay_Ms(ms);
-    GPIO_WriteBit(GPIOE, GPIO_Pin_13, 1);
-    GPIO_WriteBit(GPIOE, GPIO_Pin_14, 0);       // 10为右转信号
-    Delay_Ms(ms);
-    Car_Run();
-}
-
-
-
-/********************************************************************
-* 函数名称      : Car_Turn_Left
-* 函数功能      : 小车原地左转
-* 输       入      : u32 ms           信号变化与小车运动间的延迟
-* 输       出      : 无
-*********************************************************************/
-void Car_Turn_Left(u32 ms)
-{
-    Car_Stop();
-    Delay_Ms(ms);
-    GPIO_WriteBit(GPIOE, GPIO_Pin_13, 1);
-    GPIO_WriteBit(GPIOE, GPIO_Pin_14, 1);       // 11为左转信号
-    Delay_Ms(ms);
-    Car_Run();
-}
-
-
-
-/********************************************************************
-* 函数名称      : Echo_Switch
-* 函数功能      : 小车原地左转
-* 输       入      : u8 mode          超声波测距模块开关
-* 输       出      : 无
-*********************************************************************/
-void Echo_Switch(u8 mode)
-{
-    GPIO_WriteBit(GPIOD, GPIO_Pin_9, mode);
-}
-
-
-
-/********************************************************************
-* 函数名称      : Plier_Switch
-* 函数功能      : 控制机械钳开关
-* 输       入      : u8 mode          钳子开关模式
-* 输       出      : 无
-*********************************************************************/
-void Plier_Switch(u8 mode)
-{
-    GPIO_WriteBit(GPIOA, GPIO_Pin_1, mode);
-}
-
-
-
-/********************************************************************
-* 函数名称      : Mechanical_Arm_State
-* 函数功能      : 控制机械臂状态
-* 输       入      : u8 state         机械臂状态
-* 输       出      : 无
-*********************************************************************/
-void Mechanical_Arm_State(u8 state)
-{
-    switch (state) {
-        case Low:
-            GPIO_WriteBit(GPIOD, GPIO_Pin_10, 0);
-            GPIO_WriteBit(GPIOD, GPIO_Pin_11, 0);           // 00机械臂落下
-            break;
-        case Stay:
-            GPIO_WriteBit(GPIOD, GPIO_Pin_10, 1);
-            GPIO_WriteBit(GPIOD, GPIO_Pin_11, 1);           // 11机械臂抬起
-            break;
-        case Put1:
-            GPIO_WriteBit(GPIOD, GPIO_Pin_10, 1);
-            GPIO_WriteBit(GPIOD, GPIO_Pin_11, 0);           // 10机械臂转到1号框位
-            break;
-        case Put2:
-            GPIO_WriteBit(GPIOD, GPIO_Pin_10, 0);
-            GPIO_WriteBit(GPIOD, GPIO_Pin_11, 1);           // 01机械臂转到2号框位
-            break;
-        default:
-            break;
-    }
-}
-
-
-
-/********************************************************************
-* 函数名称      : Mechanical_Arm_Control
-* 函数功能      : 蓝牙控制机械臂
-* 输       入      : char state           机械臂状态
-*            u32 ms               机械臂状态变化间的延迟
-* 输       出      : 无
-*********************************************************************/
-u16 MA_1 = 1;                                 // 钳子状态，默认开
-void Mechanical_Arm_Control(char buffer, u8 state, u32 ms)
-{
-    if (buffer ==  '1' || state == 1)                        // 机械臂第一种运动过程
-    {
-        Mechanical_Arm_State(Low);
-        delay_ms(ms);
-        Plier_Switch(Close);
-        delay_ms(ms);
-        Mechanical_Arm_State(Stay);
-        delay_ms(ms);
-        Mechanical_Arm_State(Put1);
-        delay_ms(ms);
-        Plier_Switch(Open);
-        delay_ms(ms);
-        Mechanical_Arm_State(Stay);
-    } else if (buffer ==  '2' || state == 2)                 // 机械臂第二种运动过程
-    {
-        Mechanical_Arm_State(Low);
-        delay_ms(ms);
-        Plier_Switch(Close);
-        delay_ms(ms);
-        Mechanical_Arm_State(Stay);
-        delay_ms(ms);
-        Mechanical_Arm_State(Put2);
-        delay_ms(ms);
-        Plier_Switch(Open);
-        delay_ms(ms);
-        Mechanical_Arm_State(Stay);
-    } else if (buffer ==  'A')                 // 钳子控制
-    {
-        MA_1 = !MA_1;                         // 钳子状态取反
-        Plier_Switch(MA_1);
-    }else if (buffer ==  'B')                  // 机械臂落下
-    {
-        Mechanical_Arm_State(Low);
-    }else if (buffer ==  'C')                  // 机械臂抬起
-    {
-        Mechanical_Arm_State(Stay);
-    }else if (buffer ==  'D')                  // 机械臂转到1号框位
-    {
-        Mechanical_Arm_State(Put1);
-    }else if (buffer ==  'E')                  // 机械臂转到2号框位
-    {
-        Mechanical_Arm_State(Put2);
-    }
-}
-
-
-
-/********************************************************************
-* 函数名称      : Car_Control
-* 函数功能      : 蓝牙控制小车
-* 输       入      : char buffer              要发送的数据
-* 输       出      : 无
-*********************************************************************/
-void Car_Control(char state)
-{
-    if (state == 'F')                     //接受前进信号时小车前进
-    {
-        Car_Front_Run(TURNDELAY);
-    } else if (state == 'B')              //接受后退信号时小车后退
-    {
-        Car_Back_Run(TURNDELAY);
-    } else if (state == 'L')              //接受左转信号时小车左转
-    {
-        Car_Turn_Left(TURNDELAY);
-    } else if (state == 'R')              //接受右转信号时小车右转
-    {
-        Car_Turn_Right(TURNDELAY);
-    } else if (state == 'S')              //接受停止信号时小车停止
-    {
-        Car_Stop();
-    }
-}
-
-
-
-/********************************************************************
 * 函数名称      : Turntime_Change
 * 函数功能      : 通过蓝牙调整延迟进行旋转速度测试
 * 输       入      : char buffer          要发送的数据的首地址
@@ -730,7 +482,7 @@ void Run_Distance(u16 distance)
     else if (distance > 0)
     {
         Car_Front_Run(TURNDELAY);
-        Delay_Ms(-distance * RUNTIME / 100);
+        Delay_Ms(distance * RUNTIME / 100);
     }
     Car_Stop();
 }
@@ -802,42 +554,47 @@ int main(void)
             printf("Received:%s\r\n",buffer_r);         // 将收到的字符串发送给串口
         }
 
-        u16 angle = Angle_Measure();                    // 获取角度，若有垃圾则有角度，反之为0
-        if (angle != 0)                                 // 若不为0，则有垃圾
-        {
-            Echo_Switch(Close);
-            Turn_Angle(angle);
-            u16 distance = 0;
-            while (!distance)                           // 当距离为零，即未接收到距离信号时，再次接收
-                distance = Distance_Measure();
-            u8 refuse = Refuse_Classification();        // 获取分类信息
-            switch (refuse)                             // 将字符串封装进buffer_s
-            {
-                case 1:
-                    str_Package("Classification:    red\r\n");
-                    break;
-                case 2:
-                    str_Package("Classification:  green\r\n");
-                    break;
-                default:
-                    str_Package("Classification:  other\r\n");
-                    break;
-            }
-            uartWriteBLEstr(buffer_s);                   //将字符串穿给蓝牙
-            Run_Distance(distance);
-            Mechanical_Arm_Control('0', refuse, MECHINEARMTIME);
-            Turn_Angle(-angle - 90);
-            Echo_Switch(Open);
-            Car_Front_Run(TURNDELAY);
-        }
-
         Globalswitch_Change(buffer_r[1]);
+
 
         if (GLOBALSWITCH)
         {
-            Car_Control(buffer_r[2]);
-            Mechanical_Arm_Control(buffer_r[3], 0, MECHINEARMTIME);
-            Turntime_Change(buffer_r[4]);
+            Car_Front_Run(TURNDELAY);
+            u8 pick = High_Level_Measure();                 // 获取高电平，若有垃圾则则接收到高电平，反之为0
+            if (pick != 0)                                  // 若不为0，则有垃圾
+            {
+                Echo_Switch(Close);
+                u16 angle = 0;
+                while (!angle)                              // 当角度为零，即未接收到角度信号时，再次接收
+                    angle = Angle_Measure();
+                Turn_Angle(angle);
+                u16 distance = 0;
+                while (!distance)                           // 当距离为零，即未接收到距离信号时，再次接收
+                    distance = Distance_Measure();
+                u8 refuse = Refuse_Classification();        // 获取分类信息
+                switch (refuse)                             // 将字符串封装进buffer_s
+                {
+                    case 1:
+                        str_Package("Classification:    red\r\n");
+                        break;
+                    case 2:
+                        str_Package("Classification:  green\r\n");
+                        break;
+                    default:
+                        str_Package("Classification:  other\r\n");
+                        break;
+                }
+                uartWriteBLEstr(buffer_s);                   //将字符串穿给蓝牙
+                Run_Distance(distance);
+                Mechanical_Arm_Control('0', refuse, MECHINEARMTIME);
+                Turn_Angle(-angle - 90);
+                Echo_Switch(Open);
+                Car_Front_Run(TURNDELAY);
+            }
+
+//            Car_Control(buffer_r[2]);
+//            Mechanical_Arm_Control(buffer_r[3], 0, MECHINEARMTIME);
+//            Turntime_Change(buffer_r[4]);
         }
     }
 }

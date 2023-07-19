@@ -5,18 +5,24 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../User/arm.c \
+../User/car.c \
 ../User/ch32v30x_it.c \
 ../User/lcd.c \
 ../User/main.c \
 ../User/system_ch32v30x.c 
 
 OBJS += \
+./User/arm.o \
+./User/car.o \
 ./User/ch32v30x_it.o \
 ./User/lcd.o \
 ./User/main.o \
 ./User/system_ch32v30x.o 
 
 C_DEPS += \
+./User/arm.d \
+./User/car.d \
 ./User/ch32v30x_it.d \
 ./User/lcd.d \
 ./User/main.d \

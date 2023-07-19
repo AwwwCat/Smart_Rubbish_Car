@@ -28,7 +28,7 @@ User/main.o: ../User/main.c \
  C:\Users\lenovo\Desktop\MRS\Smart_Car\Peripheral\inc/ch32v30x_wwdg.h \
  C:\Users\lenovo\Desktop\MRS\Smart_Car\User/ch32v30x_it.h \
  C:\Users\lenovo\Desktop\MRS\Smart_Car\Peripheral\inc/ch32v30x_misc.h \
- ../User/lcd.h
+ ../User/lcd.h ../User/arm.h ../User/car.h
 
 C:\Users\lenovo\Desktop\MRS\Smart_Car\Debug/debug.h:
 
@@ -89,3 +89,7 @@ C:\Users\lenovo\Desktop\MRS\Smart_Car\User/ch32v30x_it.h:
 C:\Users\lenovo\Desktop\MRS\Smart_Car\Peripheral\inc/ch32v30x_misc.h:
 
 ../User/lcd.h:
+
+../User/arm.h:
+
+../User/car.h:
