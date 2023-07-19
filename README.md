@@ -29,24 +29,25 @@
 * Pango Design Suite
 * OpenMV IDE
 ### 使用方法
-将`Smart_Car_ch32v`用 **MounRiver Studio** 打开，编译烧录至 **赤菟开发板**；将`Smart_Car_fpga`用 **Pango Design Suite** 打开，编译烧录至 **PGL22G**。
+将`Smart_Car_ch32v`用 **MounRiver Studio** 打开，编译烧录至 **赤菟开发板**；将`Smart_Car_fpga`用 **Pango Design Suite** 打开，编译烧录至 **PGL22G**；将`ei_image_classification.py`用 **OpenMV IDE** 打开，烧录，`labels.txt`和`trained.tflite`复制进 **OpenMV Cam H7 Plus** 里。
 
 ## 主要文件说明
 ### Smart_Car_ch32v  
- 
-#### User  
-car.c  小车行为代码  
-lcd.c  lcd显示屏代码  
-arm.c  机械臂代码  
-main.c  主代码  
+#### Smart_Car_ch32v/User  
+* car.c  小车行为代码  
+* lcd.c  lcd显示屏代码  
+* arm.c  机械臂代码  
+* main.c  主代码  
   
 ### Smart_Car_fpga  
-#### prj  
-##### sourse  
-smart_car.fdc  引脚分配文件
+#### Smart_Car_fpga\prj\sourse   
+* smart_car.fdc  引脚分配文件
 
-#### rtl  
-smart_car.v  verilog文件  
+#### Smart_Car_fpga\rtl  
+* smart_car.v  verilog文件 
+
+### OpenMV
+* trained.tflite 垃圾图像训练模型
 
 ## 部分代码原理简述
 ```
