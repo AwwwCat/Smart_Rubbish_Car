@@ -1,5 +1,6 @@
 # Smart_Rubbish_Car
 “全国大学生嵌入式芯片与系统设计竞赛”参赛作品项目————智能垃圾车。
+已获东部赛区二等奖。
 ## 目录
 1. [项目介绍](https://github.com/AwwwCat/Smart_Rubbish_Car/blob/master/README.md#%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D)
 2. [所用配件](https://github.com/AwwwCat/Smart_Rubbish_Car/blob/master/README.md#%E6%89%80%E7%94%A8%E9%85%8D%E4%BB%B6)
